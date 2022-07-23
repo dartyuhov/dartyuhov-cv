@@ -1,0 +1,47 @@
+.main-header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 3rem;
+    position: fixed;
+    min-height: 4.2rem;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    margin: 0;
+}
+
+.main-nav {
+    margin-right: 2rem;
+}
+
+.main-nav li {
+    position: relative;
+    margin: 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.main-nav button {
+    color: white;
+    background: inherit;
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+
+}
+.main-nav button:hover {
+    color: #777173;
+    box-shadow: none;
+    border: none;
+}
+
+@media screen and (max-width: 768px) {
+    .main-nav {
+        display: none
+    }
+}
