@@ -1,0 +1,25 @@
+.main {
+    background: url('../images/main-background.jpg') left 10% center/cover no-repeat border-box;
+    background-color: #555;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.mainContainer {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photo {
+    width: 11rem;
+    border: 2px solid #fffbfb42;
+    border-radius: 50%;
+}
+
+.photo:hover {
+    border: 2px solid white;
+}

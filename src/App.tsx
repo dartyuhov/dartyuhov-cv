@@ -1,70 +1,37 @@
-/* eslint-disable react/jsx-props-no-spreading */
-import { useEffect, useRef, useState } from 'react';
-import {
-  Parallax, IParallax, ParallaxLayer,
-} from '@react-spring/parallax';
+import { useEffect, useState } from 'react';
+import { Parallax } from '@react-spring/parallax';
 
 import Header from './components/Layout/Header';
-import Summary from './components/Summary';
-import SkillsSticker from './components/Skills/SkillsSticker';
-
-import useScroll from './hooks/useScroll';
-
-import './App.css';
+import Summary from './components/Summary/Summary';
 import Skills from './components/Skills/Skills';
 
-const pageConfig = {
-  pageCount: 5,
-  skillsStart: 1.2,
-  skillsEnd: 5,
-};
+import skillsConfig from './data/skills.json';
+import useParallax from './hooks/useParallax';
 
-const skillsConfig = {
-  name: 'Development tools',
-  config: {
-    git: 90,
-    react: 70,
-    typescript: 90,
-    node: 90,
-  },
-};
-const skillsConfig2 = {
-  name: 'Automation tools',
-  config: {
-    selenium: 100,
-    playwirght: 100,
-    cypress: 100,
-  },
-};
-const skillsConfig3 = {
-  name: 'CI',
-  config: {
-    jankins: 100,
-    'github-actions': 50,
-    'bitbucket-pipelines': 80,
-  },
+const pageConfig = {
+  pageCount: 2,
+  skillsStart: 1,
+  skillsEnd: 2,
 };
 
 const App = () => {
-  const parallax = useRef<IParallax>(null);
   const [gradient, setGradient] = useState('linear-gradient(rgb(4, 13, 48) 100%, #d84f96)');
-  const { scrollPercent, setScrollPercent } = useScroll({
-    factor: pageConfig.pageCount * 0.8,
-  });
+  const { ref: parallax, scrollPercent, trackScroll } = useParallax();
 
   useEffect(() => {
-    const gradientDarkPercent = 100 - scrollPercent;
+    const gradientDarkPercent = 100 - scrollPercent * 0.56;
     setGradient(`linear-gradient(rgb(4, 11, 39) ${gradientDarkPercent}%, #d84f96)`);
   }, [scrollPercent]);
 
   const onAboutClick = () => {
     parallax.current?.scrollTo(0);
-    setScrollPercent(0);
+    trackScroll(600)();
   };
 
   const onSkillsClick = () => {
-    parallax.current?.scrollTo(pageConfig.skillsStart);
-    setScrollPercent((pageConfig.pageCount / (pageConfig.skillsStart + 1)) * 100);
+    const skrollsOffset = pageConfig.skillsStart - 0.1;
+    parallax.current?.scrollTo(skrollsOffset);
+    trackScroll(500)();
   };
 
   return (
@@ -81,22 +48,8 @@ const App = () => {
         pages={pageConfig.pageCount}
       >
         <Summary blur={scrollPercent * 0.15} />
-        <ParallaxLayer
-          sticky={{
-            start: pageConfig.skillsStart,
-            end: pageConfig.skillsEnd - 1,
-          }}
-          className="sticky-content"
-          style={{
-            justifyContent: 'flex-start',
-          }}
-        >
-          <SkillsSticker />
-        </ParallaxLayer>
         <Skills
-          startPage={pageConfig.skillsStart + 1}
-          stepSize={0.5}
-          skills={[skillsConfig, skillsConfig2, skillsConfig3]}
+          skills={skillsConfig as any[]}
         />
       </Parallax>
     </>
