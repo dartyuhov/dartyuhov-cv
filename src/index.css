@@ -5,23 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: hsla(298, 36%, 20%, 1);
+  overflow-x:hidden;
+  overflow-y:hidden;
 }
 
-.background {
-  /* background: linear-gradient(rgb(4, 11, 39, 0.9) 80%, #ffffff); */
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-}
-/* 
 ::-webkit-scrollbar {
   display: none;
-} */
-
-.sticky-content {
-  display: flex;
 }

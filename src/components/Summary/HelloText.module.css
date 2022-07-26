@@ -19,6 +19,7 @@
     text-align: right;
     font-weight: bold;
     color: rgb(139, 137, 137);
+    margin-bottom: 50%;
 }
 
 .type::after {
@@ -29,5 +30,36 @@
 @keyframes cursor {
     50% {
         opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 1320px) {
+    .hello {
+        margin-right: 10rem;
+    }
+    .shortDescription {
+        margin-right: 10rem;
+    }
+}
+
+@media only screen and (max-width: 1220px) {
+    .hello {
+        margin-right: 20rem;
+    }
+
+    .shortDescription {
+        margin-right: 20rem;
+    }
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .hello {
+        margin-right: 0%;
+    }
+    
+    .shortDescription {
+        margin-right: 0%;
+        margin-bottom: 40rem;
     }
 }

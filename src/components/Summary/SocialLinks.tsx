@@ -1,6 +1,6 @@
-import { ReactComponent as LinkedIn } from '../images/linkedin.svg';
-import { ReactComponent as GitHub } from '../images/github.svg';
-import { ReactComponent as Instagram } from '../images/instagram.svg';
+import { ReactComponent as LinkedIn } from '../../images/linkedin.svg';
+import { ReactComponent as GitHub } from '../../images/github.svg';
+import { ReactComponent as Instagram } from '../../images/instagram.svg';
 
 import classes from './SocialLinks.module.css';
 
