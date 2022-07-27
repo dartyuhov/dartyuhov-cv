@@ -7,47 +7,41 @@
             "TypeScript" : 70,
             "Groovy" : 60,
             "C#" : 50,
-            "Scala" : 40
+            "Scala" : 30
         }
     },
     {
         "name" : "Development tools",
         "config": {
-            "spring" : 60,
-            "react": 70,
-            "css": 50,
-            "html": 90,
-            "redux": 50,
-            "next.js": 70,
-            "node.js": 80,
-            "express": 60
+            "Spring" : 60,
+            "React": 70,
+            "CSS": 50,
+            "HTML": 90,
+            "Redux": 50,
+            "Next.js": 70,
+            "Node.js": 80,
+            "Express": 60
         }
     },
     {
         "name" : "Databases",
         "config": {
-            "mysql" : 90,
-            "postgresql" : 80,
-            "mongo" : 50
+            "Mysql" : 90,
+            "Postgres" : 80,
+            "Mongo" : 50
         }
     },
     {
         "name" : "Test Automation Tools",
         "config": {
-            "selenium" : 100,
+            "Selenium" : 100,
             "Cucumber" : 100,
-            "playwright" : 100,
-            "selenoid": 80,
-            "serenity" : 70,
-            "selenide": 70,
-            "appium": 70,
-            "jest": 80,
-            "junit5": 90,
-            "mockito": 60,
-            "TestNG": 100,
-            "mocha": 70,
-            "webdriverio": 70,
-            "allure": 100
+            "Playwright" : 100,
+            "Selenide": 70,
+            "Appium": 70,
+            "Jest": 80,
+            "Junit5": 90,
+            "Webdriverio": 70
         }
     },
     {
@@ -62,8 +56,8 @@
         "name": "CI/CD",
         "config": {
             "Jenkins" : 100,
-            "github-actions" : 60,
-            "bitbucket-pipelines": 70
+            "Github Actions" : 60,
+            "Bitbucket Pipelines": 70
         }
     }
 ]

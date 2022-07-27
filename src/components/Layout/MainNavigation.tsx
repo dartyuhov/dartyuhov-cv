@@ -34,42 +34,50 @@ const MainNavigation: FC<Props> = ({
     return scrollFunc;
   };
 
+  const leftPanelCloseHandler = () => setLeftPanelOpened(false);
+
   const mainMenu = (
-    <ul>
-      <li>
-        <button type="button" onClick={navClickDecorator(onAboutClick)}>About</button>
-      </li>
-      <li>
-        <button type="button" onClick={navClickDecorator(onSkillsClick)}>Skills</button>
-      </li>
-      <li>
-        <button type="button" onClick={navClickDecorator(onProjectsClick)}>Projects</button>
-      </li>
-      <li>
-        <button type="button" onClick={navClickDecorator(onContactClick)}>Contact me</button>
-      </li>
-    </ul>
+    <nav className={classes['main-nav']}>
+      <ul>
+        <li>
+          <button type="button" onClick={navClickDecorator(onAboutClick)}>About</button>
+        </li>
+        <li>
+          <button type="button" onClick={navClickDecorator(onSkillsClick)}>Skills</button>
+        </li>
+        <li>
+          <button type="button" onClick={navClickDecorator(onProjectsClick)}>Projects</button>
+        </li>
+        <li>
+          <button type="button" onClick={navClickDecorator(onContactClick)}>Contact me</button>
+        </li>
+      </ul>
+    </nav>
   );
 
   return (
     <>
       <header className={classes['main-header']}>
-        <nav className={classes['main-nav']}>
-          {windowWidth > responsiveConfig.mobileView && mainMenu }
-          {windowWidth <= responsiveConfig.mobileView && (
-          <Burger
-            opened={leftPanelOpened}
-            onClick={burgerTapHandler}
-            title="burger"
-            color="white"
-          />
-          )}
-        </nav>
+        {windowWidth > responsiveConfig.mobileView && mainMenu }
+        {windowWidth <= responsiveConfig.mobileView && (
+        <Burger
+          opened={leftPanelOpened}
+          onClick={burgerTapHandler}
+          title="Open navigation"
+          aria-label="Open navigation"
+          color="white"
+          styles={(theme) => ({
+            root: {
+              paddingRight: '3rem',
+            },
+          })}
+        />
+        )}
       </header>
       {leftPanelOpened && (
         <LeftPanel
           opened={leftPanelOpened}
-          onClose={() => setLeftPanelOpened(false)}
+          onClose={leftPanelCloseHandler}
         >
           {mainMenu}
         </LeftPanel>

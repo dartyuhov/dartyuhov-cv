@@ -13,60 +13,13 @@
     align-items: center;
 }
 
-.code {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-}
-
-.gif {
-    border-radius: 1rem;
-    opacity: 1;
-    -webkit-border-radius: 20px;
-    border-radius: 10px;
-    box-shadow:
-        -0.2px -0.3px 4.8px -9px rgba(0, 0, 0, 0.11),
-        9.4px 10.5px 11.6px -9px rgba(0, 0, 0, 0.11),
-        23.6px 26.4px 21.9px -9px rgba(0, 0, 0, 0.098),
-        40.4px 45.2px 39.1px -9px rgba(0, 0, 0, 0.078),
-        58.6px 65.5px 73.1px -9px rgba(0, 0, 0, 0.053),
-        77px 86px 175px -9px rgba(0, 0, 0, 0.025);
-}
-
 .photo {
     width: 11rem;
     border: 2px solid #fffbfb42;
     border-radius: 50%;
 }
 
-@media only screen and (min-width: 1600px) {
-    .gif {
-        margin-right: 5%;
-        margin-top: 5%;
-    }
-}
 
-@media only screen and (min-width: 2000px) {
-    .gif {
-        margin-right: 10%;
-        margin-top: 5%;
-    }
-}
-
-@media only screen and (max-width: 1600px) {
-    .gif {
-        margin-right: 5%;
-        margin-top: 5%;
-    }
-}
-@media only screen and (max-width: 1500px) {
-    .gif {
-        margin-right: 2%;
-        margin-top: 5%;
-    }
-}
 
 @media only screen and (max-width: 1320px) {
     .photo {
@@ -89,46 +42,5 @@
 @media only screen and (max-width: 1000px) {
     .photo {
         margin-right: 0%;
-    }
-
-    .gif {
-        margin-right: 0%;
-        margin-top: 60%;
-    }
-
-    .code {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        width: 100%;
-    }
-}
-
-@media only screen and (max-width: 680px) {
-    .gif {
-        margin-right: 0%;
-        margin-top: 70%;
-        opacity: 0.9;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .gif {
-        margin-right: 0%;
-        margin-top: 90%;
-        opacity: 0.9;
-        filter: contrast(1.05);
-    }
-}
-
-
-@media only screen and (min-height: 830px) {
-    .gif {
-        margin-right: 0%;
-        margin-top: 30rem;
-        height: 400px;
-        width: 370px;
-        opacity: 0.9;
     }
 }

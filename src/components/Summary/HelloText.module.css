@@ -19,7 +19,7 @@
     text-align: right;
     font-weight: bold;
     color: rgb(139, 137, 137);
-    margin-bottom: 50%;
+    margin-bottom: 100%;
 }
 
 .type::after {
@@ -60,6 +60,6 @@
     
     .shortDescription {
         margin-right: 0%;
-        margin-bottom: 40rem;
+        margin-bottom: 90rem;
     }
 }

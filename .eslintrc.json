@@ -48,6 +48,8 @@
             1,
             {
                 "extensions": [
+                    "ts",
+                    "js",
                     ".jsx",
                     ".tsx"
                 ]

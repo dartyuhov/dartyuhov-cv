@@ -12,7 +12,7 @@ const SocialLinks = () => (
       href="https://www.linkedin.com/in/dmitry-artyuhov-75873913b"
       rel="noreferrer"
     >
-      <LinkedIn />
+      <LinkedIn id="linkedin-link" />
     </a>
     <a
       target="_blank"
@@ -20,7 +20,7 @@ const SocialLinks = () => (
       href="https://github.com/dartyuhov"
       rel="noreferrer"
     >
-      <GitHub />
+      <GitHub id="github-link" />
     </a>
     <a
       target="_blank"
@@ -28,7 +28,7 @@ const SocialLinks = () => (
       href="https://www.instagram.com/dima_artyukhov"
       rel="noreferrer"
     >
-      <Instagram />
+      <Instagram id="instagram-link" />
     </a>
   </div>
 );

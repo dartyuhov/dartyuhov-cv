@@ -1,67 +1,43 @@
-import { FC, useState } from 'react';
+/* eslint-disable no-unused-vars */
+import { FC } from 'react';
 import { ParallaxLayer } from '@react-spring/parallax';
 
-import { Tabs, MantineTheme } from '@mantine/core';
+import { Carousel } from '@mantine/carousel';
+
 import SkillBox from './SkillBox';
 
-import classes from './Skills.module.css';
-
+import './Slider.css';
 import { Skill } from '../../models/types.d';
+
+import pagesConfig from '../../pages.config';
 
 type Props = {
     skills: Skill[]
 }
-const tabStyles = (skills: Skill[]) => (theme: MantineTheme) => ({
-  tabControl: {
-    backgroundColor: theme.colors.background,
-    border: '1px solid white',
-    width: `${100 / skills.length}%`,
-    color: 'white',
-    fontSize: '1.1rem',
-    height: '3rem',
-    padding: '0.5rem',
-    opacity: 1,
-    '&:not(:first-of-type)': {
-      borderLeft: 0,
-    },
-
-    '&:first-of-type': {
-      borderTopLeftRadius: '1rem',
-      borderLeft: '1px solid white',
-    },
-
-    '&:last-of-type': {
-      borderTopRightRadius: '1rem',
-      borderRight: '1px solid white',
-    },
-  },
-
-  tabActive: {
-    backgroundColor: 'white',
-    opacity: '0.9',
-    borderColor: 'white',
-    color: theme.black,
-  },
-});
 
 const Skills: FC<Props> = ({ skills }) => {
-  const [activeTab, setActiveTab] = useState(0);
-
+  const content = skills.length === 0 ? <div>No skills available</div>
+    : skills.map((skill, index) => (
+      <Carousel.Slide key={index}>
+        <SkillBox skillConfig={skill} key={index} />
+      </Carousel.Slide>
+    ));
   return (
-    <ParallaxLayer offset={1} speed={1}>
-      <Tabs
-        active={activeTab}
-        onTabChange={setActiveTab}
-        variant="unstyled"
-        className={classes.skillsPanel}
-        styles={tabStyles(skills)}
+    <ParallaxLayer factor={pagesConfig.skills.factor} offset={pagesConfig.skills.start} speed={1}>
+      <div className="title">Skills</div>
+      <Carousel
+        loop
+        align={skills.length > 1 ? 'start' : 'center'}
+        withIndicators={skills.length > 1}
+        aria-label="Skills carousel"
+        nextControlLabel="Next slide (right arrow)"
+        previousControlLabel="Previous slide (left arrow)"
+        controlSize={60}
+        withControls={skills.length > 1}
+        slideSize="70%"
       >
-        {skills.map((skill, index) => (
-          <Tabs.Tab label={skill.name} key={index}>
-            <SkillBox skillConfig={skill} key={index} />
-          </Tabs.Tab>
-        ))}
-      </Tabs>
+        {content}
+      </Carousel>
     </ParallaxLayer>
   );
 };

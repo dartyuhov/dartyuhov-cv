@@ -33,11 +33,35 @@
     border: none;
     font-size: 1.1em;
     font-weight: bold;
-
 }
 
 .main-nav button:hover {
     color: #777173;
     box-shadow: none;
     border: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .main-nav li {
+        display: block;
+        padding-left: 0;
+    }
+    
+    .main-nav button {
+        text-align: left;
+        width: 20rem;
+        color: white;
+        background: inherit;
+        border: none;
+        margin-bottom: 1rem;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
 }
