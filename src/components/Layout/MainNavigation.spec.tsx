@@ -7,13 +7,16 @@ import MainNavigation from './MainNavigation';
 const clickMock = jest.fn();
 
 function renderMainNavigation() {
-  render(<MainNavigation
-    onAboutClick={clickMock}
-    onContactClick={clickMock}
-    onProjectsClick={clickMock}
-    onSkillsClick={clickMock}
-  />);
+  render((
+    <MainNavigation
+      onAboutClick={clickMock}
+      onContactClick={clickMock}
+      onProjectsClick={clickMock}
+      onSkillsClick={clickMock}
+    />
+  ));
 }
+
 describe('Main Navigation Common ', () => {
   [1024, 768].forEach((width) => {
     it(`should render header for screen size ${width}`, () => {
@@ -23,6 +26,29 @@ describe('Main Navigation Common ', () => {
       const header = screen.getByRole('banner');
       expect(header).toBeInTheDocument();
     });
+  });
+
+  it('resizing should trigger comonent rerender', () => {
+    window.innerWidth = 769;
+    window.innerHeight = 1000;
+    renderMainNavigation();
+    let burger = screen.queryByRole('button', { name: 'Open navigation' });
+    expect(burger).toBeNull();
+
+    // Trigger the window resize event.
+    act(() => {
+      window.innerWidth = 768;
+      window.dispatchEvent(new Event('resize'));
+    });
+    burger = screen.queryByRole('button', { name: 'Open navigation' });
+    expect(burger).toBeInTheDocument();
+
+    act(() => {
+      window.innerWidth = 769;
+      window.dispatchEvent(new Event('resize'));
+    });
+
+    expect(burger).not.toBeInTheDocument();
   });
 });
 
@@ -71,14 +97,18 @@ describe('Main Navigation for mobile', () => {
     expect(burger).toBeInTheDocument();
   });
 
-  it('burger should open left menu', async () => {
+  it('burger should open/close left menu', async () => {
     const burger = await screen.findByRole('button', { name: 'Open navigation' });
-    userEvent.click(burger);
-    const leftMenu = await screen.findByRole('navigation');
-    const menuText = await screen.findByText('Menu');
 
+    userEvent.click(burger);
+    const leftMenu = await screen.findByRole('dialog');
+    const menuText = await screen.findByText('Menu');
     expect(leftMenu).toBeInTheDocument();
     expect(menuText).toBeInTheDocument();
+
+    userEvent.click(burger);
+    expect(menuText).not.toBeInTheDocument();
+    expect(leftMenu).not.toBeInTheDocument();
   });
 
   ['About', 'Skills', 'Projects', 'Contact me'].forEach((text) => {

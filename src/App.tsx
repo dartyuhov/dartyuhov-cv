@@ -14,8 +14,10 @@ import pagesConfig from './pages.config';
 const App = () => {
   const { ref: parallaxRef, scrollTo } = useParallax();
 
-  const onAboutClick = () => scrollTo(pagesConfig.summary.start);
-  const onSkillsClick = () => scrollTo(pagesConfig.skills.start - 0.04);
+  const onAboutClickHandler = () => scrollTo(pagesConfig.summary.start);
+  const onSkillsClickHandler = () => scrollTo(pagesConfig.skills.start - 0.04);
+  const onProjectsClickHandler = () => scrollTo(2);
+  const onContactClickHandler = () => scrollTo(3);
 
   const skills = skillsConfig as any[] as Skill[];
 
@@ -23,10 +25,10 @@ const App = () => {
     <>
       <Background />
       <MainNavigation
-        onAboutClick={onAboutClick}
-        onSkillsClick={onSkillsClick}
-        onProjectsClick={() => {}}
-        onContactClick={() => {}}
+        onAboutClick={onAboutClickHandler}
+        onSkillsClick={onSkillsClickHandler}
+        onProjectsClick={onProjectsClickHandler}
+        onContactClick={onContactClickHandler}
       />
       <Parallax
         ref={parallaxRef}

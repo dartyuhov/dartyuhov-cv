@@ -34,7 +34,7 @@
     "lint": "eslint --ext .js,.ts,.tsx src",
     "test": "npm run lint && npm run test:unit && npm run test:e2e",
     "test:watch": "react-scripts test",
-    "test:unit": "react-scripts test --watchAll=false",
+    "test:unit": "react-scripts test --watchAll=false --coverage",
     "test:e2e": "npx playwright test",
     "test:e2e-report": "npx playwright show-report"
   },
@@ -71,6 +71,25 @@
   "overrides": {
     "@mantine/carousel": {
       "embla-carousel-react": "7.0.0-rc05"
+    }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "./src/**/*.(jsx|tsx|ts|js)",
+      "!**/index.(ts|tsx)",
+      "!**/*.config.(ts|js)",
+      "!**/*.d.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "reportWebVitals.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
     }
   }
 }
