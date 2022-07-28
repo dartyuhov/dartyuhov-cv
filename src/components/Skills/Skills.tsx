@@ -23,7 +23,7 @@ const Skills: FC<Props> = ({ skills }) => {
       </Carousel.Slide>
     ));
   return (
-    <ParallaxLayer factor={pagesConfig.skills.factor} offset={pagesConfig.skills.start} speed={1}>
+    <ParallaxLayer id="skills" factor={pagesConfig.skills.factor} offset={pagesConfig.skills.start} speed={1}>
       <div className="title">Skills</div>
       <Carousel
         loop

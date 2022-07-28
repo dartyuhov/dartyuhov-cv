@@ -1,10 +1,11 @@
 import { Page, BrowserContext } from '@playwright/test';
 import Header from './Header.form';
 import Summary from './Summary.form';
-import Skills from './SkillsCarousel.form';
+import SkillsCarousel from './SkillsCarousel.form';
+import { IPage } from './types/types.d';
 
-export default class Portfolio {
-  private readonly context: BrowserContext;
+export default class Portfolio implements IPage {
+  readonly context: BrowserContext;
 
   readonly page: Page;
 
@@ -14,15 +15,15 @@ export default class Portfolio {
   }
 
   get header() {
-    return new Header(this.page.locator('header'));
+    return new Header(this.page);
   }
 
   get summary() {
-    return new Summary(this.page.locator('[class^="Summary_mainContainer"]'), this.context);
+    return new Summary(this.page, this.context);
   }
 
-  get skills() {
-    return new Skills(this.page.locator('.title >> text=Skills'));
+  get skillsCarousel() {
+    return new SkillsCarousel(this.page);
   }
 
   async open() {

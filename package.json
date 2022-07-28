@@ -7,9 +7,9 @@
     "@mantine/core": "^5.0.0",
     "@mantine/hooks": "^5.0.0",
     "@mantine/notifications": "^5.0.0",
+    "@playwright/test": "^1.24.1",
     "@react-spring/parallax": "^9.5.1",
     "@react-spring/web": "^9.5.1",
-    "@playwright/test": "^1.24.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -35,7 +35,8 @@
     "test": "npm run lint && npm run test:unit && npm run test:e2e",
     "test:watch": "react-scripts test",
     "test:unit": "react-scripts test --watchAll=false",
-    "test:e2e": "npx playwright test"
+    "test:e2e": "npx playwright test",
+    "test:e2e-report": "npx playwright show-report"
   },
   "eslintConfig": {
     "extends": [

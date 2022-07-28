@@ -1,19 +1,24 @@
-import { Locator, BrowserContext } from '@playwright/test';
+import { Locator, BrowserContext, Page } from '@playwright/test';
+import { IForm } from './types/types.d';
 
 export type SocialNetworkLinkType = 'GitHub' | 'Instagram' | 'LinkedIn';
 
-export default class Summary {
+export default class Summary implements IForm {
   public readonly locator: Locator;
 
   private readonly context: BrowserContext;
 
-  constructor(locator: Locator, context: BrowserContext) {
-    this.locator = locator;
+  constructor(private readonly page: Page, context: BrowserContext) {
+    this.locator = page.locator('#summary');
     this.context = context;
   }
 
   get helloText() {
     return this.locator.locator('span[class^=HelloText_hello]');
+  }
+
+  get gif() {
+    return this.locator.locator('[class^="TerminalImage_gif"]');
   }
 
   get shortDescription() {
@@ -23,18 +28,16 @@ export default class Summary {
   async goToSocial(socialNetwork: SocialNetworkLinkType) {
     const [newPage] = await Promise.all([
       this.context.waitForEvent('page'),
-      this.locator.locator(`#${socialNetwork.toLowerCase()}-link`).click(),
+      this.getSocialLinkLocator(socialNetwork).click(),
     ]);
     return newPage;
   }
 
   async getSocialHref(socialNetwork: SocialNetworkLinkType) {
-    return this.locator.locator('a', {
-      has: this.locator.locator(`#${socialNetwork.toLowerCase()}-link`),
-    }).getAttribute('href');
+    return this.getSocialLinkLocator(socialNetwork).getAttribute('href');
   }
 
-  async isDisplayed() {
-    return this.locator.isVisible();
+  private getSocialLinkLocator(socialNetwork: SocialNetworkLinkType) {
+    return this.locator.locator(`a:has(#${socialNetwork.toLowerCase()}-link)`);
   }
 }

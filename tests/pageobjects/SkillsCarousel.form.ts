@@ -1,15 +1,18 @@
-import { Locator } from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
+import { IForm } from './types/types.d';
 
-class SkillsCarousel {
+export default class SkillsCarousel implements IForm {
   public readonly locator: Locator;
 
-  constructor(locator: Locator) {
-    this.locator = locator;
+  constructor(private page: Page) {
+    this.locator = page.locator('#skills');
   }
 
-  async isDisplayed() {
-    return this.locator.isVisible();
+  getSlide(name: string) {
+    return this.locator.locator(`[aria-label="skill ${name}"]`);
+  }
+
+  async openSlide(index: number) {
+    await this.locator.locator('button.mantine-Carousel-indicator').nth(index).click();
   }
 }
-
-export default SkillsCarousel;

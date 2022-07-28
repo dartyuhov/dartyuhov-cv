@@ -1,15 +1,14 @@
-import { Locator } from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
+import { IForm } from './types/types.d';
 
-class Header {
-  private readonly locator: Locator;
+export default class Header implements IForm {
+  readonly locator: Locator;
 
-  constructor(locator: Locator) {
-    this.locator = locator;
+  constructor(private readonly page: Page) {
+    this.locator = page.locator('header');
   }
 
   async goTo(link: 'About' | 'Skills') {
     await this.locator.locator(`text=${link}`).click();
   }
 }
-
-export default Header;

@@ -20,12 +20,12 @@ test.describe('Social links', () => {
 
   testData.forEach((data) => {
     test(`user should be able to go to ${data.linkName}`, async ({ portfolio }) => {
-      const instagram = await portfolio.summary.goToSocial(data.linkName);
-      await expect(instagram).toHaveURL(data.url);
+      const socialNetworkPage = await portfolio.summary.goToSocial(data.linkName);
+      await expect(socialNetworkPage).toHaveURL(data.url);
     });
   });
   // TODO fix test
-  test.fixme('Instagram link is correct', async ({ portfolio }) => {
+  test('Instagram link is correct', async ({ portfolio }) => {
     const linkedinHref = await portfolio.summary.getSocialHref('LinkedIn');
     expect(linkedinHref).toBe('https://www.linkedin.com/in/dmitry-artyuhov-75873913b');
   });

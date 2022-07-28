@@ -21,7 +21,7 @@ const Summary = () => {
   }, []);
 
   return (
-    <>
+    <div id="summary">
       <ParallaxLayer
         factor={summary.factor}
         offset={summary.start}
@@ -36,7 +36,8 @@ const Summary = () => {
           <HelloText />
         </div>
       </ParallaxLayer>
-    </>
+
+    </div>
   );
 };
 

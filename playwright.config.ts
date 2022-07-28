@@ -1,6 +1,7 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
 
+const desktopViewport = { width: 1440, height: 1080 };
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -41,23 +42,27 @@ const config: PlaywrightTestConfig = {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
+        viewport: desktopViewport,
       },
     },
 
-    // {
-    //   name: 'firefox',
-    //   use: {
-    //     ...devices['Desktop Firefox'],
-    //   },
-    // },
+    {
+      name: 'firefox',
+      use: {
+        ...devices['Desktop Firefox'],
+        viewport: desktopViewport,
+      },
+    },
 
-    // {
-    //   name: 'webkit',
-    //   use: {
-    //     ...devices['Desktop Safari'],
-    //   },
-    // },
+    {
+      name: 'webkit',
+      use: {
+        ...devices['Desktop Safari'],
+        viewport: desktopViewport,
+      },
+    },
 
+    // TODO add mobile tests
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',
@@ -100,7 +105,8 @@ const config: PlaywrightTestConfig = {
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
-    headless: false,
+    screenshot: 'only-on-failure',
+    headless: process.env.HEADLESS ? process.env.HEADLESS === 'true' : true,
     baseURL: 'http://localhost:3000/',
   },
 };

@@ -3,9 +3,10 @@ import { render, screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import Summary from './Summary';
 
+const renderSummary = () => render(<Parallax pages={1}><Summary /></Parallax>);
 describe('Summary screen', () => {
   it('should render summary screen', () => {
-    render(<Parallax pages={1}><Summary /></Parallax>);
+    renderSummary();
 
     const avatar = screen.getByAltText('avatar');
     expect(avatar).toBeInTheDocument();
@@ -18,7 +19,7 @@ describe('Summary screen', () => {
 
     it('should render terminal with test demo after timeout', async () => {
       jest.useFakeTimers();
-      render(<Parallax pages={1}><Summary /></Parallax>);
+      renderSummary();
 
       act(() => {
         jest.runOnlyPendingTimers();
@@ -29,7 +30,7 @@ describe('Summary screen', () => {
     });
 
     it('should not render terminal becaouse of timeout', () => {
-      render(<Parallax pages={1}><Summary /></Parallax>);
+      renderSummary();
       const image = screen.queryByRole('img', { name: 'Running some tests...' });
       expect(image).toBeNull();
     });
