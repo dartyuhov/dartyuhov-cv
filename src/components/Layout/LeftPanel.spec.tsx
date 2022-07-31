@@ -11,7 +11,7 @@ describe('Left Panel', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 
-  it('should not render', () => {
+  it('should not render left panel', () => {
     render(
       <LeftPanel onClose={jest.fn()} opened={false}>
         <div />

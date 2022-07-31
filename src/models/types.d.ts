@@ -4,3 +4,11 @@ export type Skill = {
         [key: string]: number,
     }
 }
+
+export type Project = {
+    name: string;
+    role: string;
+    techStack: string[];
+    year: number;
+    description: string;
+}

@@ -20,7 +20,12 @@ const MainNavigation: FC<Props> = ({
 }) => {
   const [leftPanelOpened, setLeftPanelOpened] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  useWindowEvent('resize', () => setWindowWidth(window.innerWidth));
+  useWindowEvent('resize', () => {
+    setWindowWidth(window.innerWidth);
+    if (windowWidth > responsiveConfig.mobileView) {
+      setLeftPanelOpened(false);
+    }
+  });
 
   const burgerTapHandler = () => setLeftPanelOpened((prevState) => !prevState);
 
@@ -55,26 +60,31 @@ const MainNavigation: FC<Props> = ({
     </nav>
   );
 
+  let headerContent;
+  if (windowWidth > responsiveConfig.mobileView) {
+    headerContent = mainMenu;
+  } else {
+    headerContent = (
+      <Burger
+        opened={leftPanelOpened}
+        onClick={burgerTapHandler}
+        title="Open navigation"
+        aria-label="Open navigation"
+        color="white"
+        styles={(theme) => ({
+          root: {
+            paddingRight: '3rem',
+          },
+        })}
+      />
+    );
+  }
   return (
     <>
       <header className={classes['main-header']}>
-        {windowWidth > responsiveConfig.mobileView && mainMenu }
-        {windowWidth <= responsiveConfig.mobileView && (
-        <Burger
-          opened={leftPanelOpened}
-          onClick={burgerTapHandler}
-          title="Open navigation"
-          aria-label="Open navigation"
-          color="white"
-          styles={(theme) => ({
-            root: {
-              paddingRight: '3rem',
-            },
-          })}
-        />
-        )}
+        {headerContent}
       </header>
-      {leftPanelOpened && (
+      {leftPanelOpened && windowWidth <= responsiveConfig.mobileView && (
         <LeftPanel
           opened={leftPanelOpened}
           onClose={leftPanelCloseHandler}

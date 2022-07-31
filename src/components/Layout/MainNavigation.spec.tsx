@@ -17,7 +17,7 @@ function renderMainNavigation() {
   ));
 }
 
-describe('Main Navigation Common ', () => {
+describe('Window resizing changes main navigation ', () => {
   [1024, 768].forEach((width) => {
     it(`should render header for screen size ${width}`, () => {
       window.innerWidth = width;
@@ -28,7 +28,7 @@ describe('Main Navigation Common ', () => {
     });
   });
 
-  it('resizing should trigger comonent rerender', () => {
+  it('resizing should show/hide borger button', () => {
     window.innerWidth = 769;
     window.innerHeight = 1000;
     renderMainNavigation();
@@ -99,7 +99,6 @@ describe('Main Navigation for mobile', () => {
 
   it('burger should open/close left menu', async () => {
     const burger = await screen.findByRole('button', { name: 'Open navigation' });
-
     userEvent.click(burger);
     const leftMenu = await screen.findByRole('dialog');
     const menuText = await screen.findByText('Menu');

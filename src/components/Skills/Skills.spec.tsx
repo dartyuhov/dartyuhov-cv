@@ -11,7 +11,7 @@ const renderSkills = (skills: Skill[]) => {
   render(<Parallax pages={1}><Skills skills={skills} /></Parallax>);
 };
 
-describe('Skills', () => {
+describe('Skills section', () => {
   beforeEach(() => {
     setupIntersectionMocking(jest.fn);
   });

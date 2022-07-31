@@ -9,7 +9,7 @@ import {
 
 import SkillBox from './SkillBox';
 
-describe('should render skill ifo', () => {
+describe('Skill box', () => {
   beforeEach(() => {
     setupIntersectionMocking(jest.fn);
   });

@@ -7,12 +7,11 @@ import SocialLinks from './SocialLinks';
 
 import classes from './Summary.module.css';
 import avatar from '../../images/avatar.jpeg';
-import pagesConfig from '../../pages.config';
-
-const { summary } = pagesConfig;
+import usePageConfig from '../../hooks/usePageConfig';
 
 const Summary = () => {
   const [terminalActive, setTerminalActive] = useState(false);
+  const { pagesConfig } = usePageConfig();
 
   useEffect(() => {
     setTimeout(() => {
@@ -22,14 +21,16 @@ const Summary = () => {
 
   return (
     <div id="summary">
-      <ParallaxLayer
-        factor={summary.factor}
-        offset={summary.start}
-        speed={0.2}
-      >
-        <TerminalImage active={terminalActive} />
-      </ParallaxLayer>
-      <ParallaxLayer offset={summary.start + 0.2} speed={0.5}>
+      {terminalActive && (
+        <ParallaxLayer
+          factor={pagesConfig.factor}
+          offset={pagesConfig.summary.start}
+          speed={pagesConfig.summary.speed - 0.1}
+        >
+          <TerminalImage />
+        </ParallaxLayer>
+      )}
+      <ParallaxLayer offset={pagesConfig.summary.start + 0.2} speed={pagesConfig.summary.speed}>
         <div className={classes.mainContainer}>
           <img src={avatar} alt="avatar" className={classes.photo} />
           <SocialLinks />

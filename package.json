@@ -3,28 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "@mantine/carousel": "^5.0.0",
     "@mantine/core": "^5.0.0",
+    "@mantine/form": "^5.0.0",
     "@mantine/hooks": "^5.0.0",
     "@mantine/notifications": "^5.0.0",
-    "@playwright/test": "^1.24.1",
     "@react-spring/parallax": "^9.5.1",
-    "@react-spring/web": "^9.5.1",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.11.45",
+    "@reduxjs/toolkit": "^1.8.3",
+    "@tabler/icons": "^1.78.1",
     "embla-carousel-react": "^7.0.0-rc05",
+    "lodash.groupby": "^4.6.0",
     "react": "^18.2.0",
     "react-confetti": "^6.1.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.4.0",
-    "react-scripts": "5.0.1",
-    "react-spring": "^9.5.2",
+    "react-redux": "^8.0.2",
     "typescript": "^4.7.4",
     "typewriter-effect": "^2.19.0",
-    "wait-for-expect": "^3.0.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -32,6 +28,7 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js,.ts,.tsx src",
+    "pretest": "rimraf ./coverage && rimraf ./playwright-report && rimraf ./test-results",
     "test": "npm run lint && npm run test:unit && npm run test:e2e",
     "test:watch": "react-scripts test",
     "test:unit": "react-scripts test --watchAll=false --coverage",
@@ -57,6 +54,13 @@
     ]
   },
   "devDependencies": {
+    "@playwright/test": "^1.24.1",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/lodash.groupby": "^4.6.7",
+    "@types/node": "^16.11.45",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
@@ -66,7 +70,9 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.30.1",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "react-scripts": "5.0.1",
+    "rimraf": "^3.0.2"
   },
   "overrides": {
     "@mantine/carousel": {
