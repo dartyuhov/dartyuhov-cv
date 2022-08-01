@@ -1,0 +1,34 @@
+.mainContainer {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    margin: 0 2rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.yearContainer {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    align-items: left;
+    margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 950px) {
+    .yearContainer {
+        flex-direction: column;
+    }
+
+    .mainContainer {
+        margin: 0 1rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+}

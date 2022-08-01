@@ -1,0 +1,126 @@
+[
+    {
+        "name": "Аirlines: Web and mobile applications",
+        "role": "Manual QA",
+        "techStack": [
+            "WMWare",
+            "Jira",
+            "VirtualBox",
+            "Mobile Testing",
+            "Web Testing"
+        ],
+        "year": 2016,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed"
+    },
+    {
+        "name": "Ant-virus. Web application.",
+        "role": "Manual QA",
+        "techStack": [
+            "VMware", "vSphere", "Microsoft VMM", "Hyper v", "TM Server", "VPN", "RDP", "VNC", "Windows", "MacOS", "Android" ,"iOS"
+        ],
+        "year": 2016,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed"
+    },
+    {
+        "name": "Web-store for Animals (medicaments)",
+        "role": "Test Automation Engineer",
+        "techStack": [
+            "Java", "Selenium", "TestNG", "Jenkins", "Maven"
+        ],
+        "year": 2017,
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed"
+    },
+    {
+        "name": "Social network for military.",
+        "role": "Test Automation Engineer",
+        "techStack": [
+            "Java", "Selenium", "TestNG", "Jenkins", "Jenkins", "TeamCity", "MySQL", "Maven"
+        ],
+        "year": 2017,
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed"
+    },
+    {
+        "name": "Social network for a community of real estate professionals.",
+        "role": "Test Automation Engineer",
+        "techStack": [
+            "Java", "Selenium", "Cucumber", "Jenkins", "Maven", "Allure"
+        ],
+        "year": 2017,
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed"
+    },
+    {
+        "name": "DLP-system for corporate network scanning.",
+        "role": "Test Automation Engineer | Team Lead",
+        "techStack": [
+            "Scala", "TestNG", "Jenkins", "Maven", "Allure"
+        ],
+        "year": 2018,
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed"
+    },
+    {
+        "name": "Business learning portal for startups.",
+        "role": "Test Automation Engineer",
+        "techStack": [
+            "Java", "Selenium", "Cucumber", "Jenkins", "YouTrack", "kubernetes", "Docker", "Mocrservices", "Rest-Assured"
+        ],
+        "year": 2018,
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed"
+    },
+    {
+        "name": "Test run / analyzing portal",
+        "role": "Java back-end developer | DevOps",
+        "techStack": [
+            "Java", "Spring", "Hybernate", "JPA", "Postgres", "Maven", "Jenkins", "Docker", "TestNG"
+        ],
+        "year": 2018,
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed"
+    },
+    {
+        "name": "Unity-based mobile game",
+        "role": "SDET | Team Lead",
+        "techStack": [
+            "Unity", "C#", "Java", "Appium", "Jenkins", "Test Strategy", "Groovy", "Junit5", "GCP", "Google Guice", "Rest-Assured"
+        ],
+        "year": 2019,
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed"
+    },
+    {
+        "name": "Finance. Bank transactions.",
+        "role": "Test Automation Engineer",
+        "techStack": [
+            "Playwright", "Jest", "Typescript", "Cucumber",
+            "Cucumber", "Selenide", "TestNG", "Integration test", "Google Guice", "RabbitMQ", "DB2", "TeamCity", "microservices"
+        ],
+        "year": 2020,
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed"
+    },
+    {
+        "name": "Darknet monitoring web app.",
+        "role": "SDET | Test Automation Engineer",
+        "techStack": [
+            "Typescript", "Jest", "Playwright",
+            "React", "OpenAPI generator", "testing-library", "Test Strategy", "Cucumber", "one-app", "microfrontends", "bitbucket-pipelnes"
+        ],
+        "year": 2020,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed"
+    },
+    {
+        "name": "Customer portal.",
+        "role": "SDET | Team Lead",
+        "techStack": [
+            "Typescript", "playwright", "OpenAPI generator", "testing-library", "cucumber", "react", "one-app",
+            "bitbucket-pipelnes", "Test Strategy", "microfrontends", "microservices"
+        ],
+        "year": 2021,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed euismod, urna eu tincidunt consectetur, nisi nunc egestas nunc, euismod aliquam nisl nunc euismod nunc. Sed"
+    },
+    {
+        "name": "European Union internal product",
+        "role": "Test Automation Engineer",
+        "techStack": [
+            "Java", "Typescript", "playwright", "microfrontends", "microservices", "Cucumber", "React", "Jenkins", "Camunda", "Serenity", "Spring", "Mockito", "Javascript", "Groovy"
+        ],
+        "year": 2022,
+        "description":"Lorem ipsum dolor sit amet"
+    }
+]
