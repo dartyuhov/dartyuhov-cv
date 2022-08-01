@@ -8,7 +8,7 @@ export default class Header implements IForm {
     this.locator = page.locator('header');
   }
 
-  async goTo(link: 'About' | 'Skills') {
+  async goTo(link: 'About' | 'Skills' | 'Contact me') {
     await this.locator.locator(`text=${link}`).click();
   }
 }

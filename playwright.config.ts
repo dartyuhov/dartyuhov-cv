@@ -15,7 +15,7 @@ const config: PlaywrightTestConfig = {
   testDir: './tests/',
   snapshotDir: './tests/__snapshots__',
   /* Maximum time one test can run for. */
-  timeout: 30 * 1000,
+  timeout: 120000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
@@ -38,13 +38,13 @@ const config: PlaywrightTestConfig = {
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: {
-        ...devices['Desktop Chrome'],
-        viewport: desktopViewport,
-      },
-    },
+    // {
+    //   name: 'chromium',
+    //   use: {
+    //     ...devices['Desktop Chrome'],
+    //     viewport: desktopViewport,
+    //   },
+    // },
 
     {
       name: 'firefox',
@@ -106,7 +106,7 @@ const config: PlaywrightTestConfig = {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     screenshot: 'only-on-failure',
-    headless: process.env.HEADLESS ? process.env.HEADLESS === 'true' : true,
+    headless: process.env.HEADLESS ? process.env.HEADLESS === 'true' : false,
     baseURL: 'http://localhost:3000/',
   },
 };

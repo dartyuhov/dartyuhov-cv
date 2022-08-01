@@ -6,12 +6,12 @@
     padding: 1rem;
     margin: 1rem 0rem 3rem 2rem;
     width: 85%;
-    height: 40rem;
+    height: 50rem;
 }
 
 .name {
     color: white;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-left: 25%;
     padding-bottom: 1rem;
@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 85%;
+    width: 93%;
 }
 
 .skillName {
@@ -89,21 +89,22 @@
         margin: 0.2rem;
         flex-direction: column;
         justify-content: center;
-        width: 85%;
+        width: 100%;
     }
     .name {
         color: white;
         font-size: 1rem;
         padding-bottom: 0.5rem;
+        margin-left: 5%;
     }
 
     .skillName {
         color: white;
-        font-size: 0.9rem;
+        font-size: 1rem;
         align-self: left;
         padding-left: 0.5rem;
-        margin-top: 0;
-        margin-bottom: 0;
+        margin-top: .3rem;
+        margin-bottom: .2rem;
     }
 
     .skillContainer {
@@ -126,11 +127,5 @@
 @media only screen and (max-height: 1220px) {
     .skillContainer {
         height: 35rem;
-    }
-}
-
-@media only screen and (max-height: 900px) {
-    .skillContainer {
-        height: 25rem;
     }
 }

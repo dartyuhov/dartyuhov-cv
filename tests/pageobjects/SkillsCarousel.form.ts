@@ -4,7 +4,10 @@ import { IForm } from './types/types.d';
 export default class SkillsCarousel implements IForm {
   public readonly locator: Locator;
 
-  constructor(private page: Page) {
+  private page;
+
+  constructor(page: Page) {
+    this.page = page;
     this.locator = page.locator('#skills');
   }
 
@@ -14,5 +17,9 @@ export default class SkillsCarousel implements IForm {
 
   async openSlide(index: number) {
     await this.locator.locator('button.mantine-Carousel-indicator').nth(index).click();
+  }
+
+  getSlideByName(name: string) {
+    return this.locator.locator(`[class^="mantine-Carousel-slide"]:has([aria-label="skill ${name}"])`);
   }
 }

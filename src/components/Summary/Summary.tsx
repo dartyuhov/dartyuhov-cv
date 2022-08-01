@@ -37,7 +37,6 @@ const Summary = () => {
           <HelloText />
         </div>
       </ParallaxLayer>
-
     </div>
   );
 };

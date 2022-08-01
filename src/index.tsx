@@ -10,11 +10,9 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <React.StrictMode>
-    <NotificationsProvider position="bottom-right" transitionDuration={300} limit={1}>
-      <App />
-    </NotificationsProvider>
-  </React.StrictMode>,
+  <NotificationsProvider position="bottom-right" transitionDuration={300} limit={1}>
+    <App />
+  </NotificationsProvider>,
 );
 
 reportWebVitals();

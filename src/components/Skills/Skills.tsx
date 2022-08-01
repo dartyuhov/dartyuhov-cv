@@ -30,8 +30,8 @@ const Skills: FC<Props> = ({ skills }) => {
       factor={pagesConfig.factor}
       speed={pagesConfig.skills.speed}
     >
-      <div className="title">Skills</div>
-      <div className="container">
+      <div className="mainContainer">
+        <h3 className="title">Skills</h3>
         <Carousel
           loop
           align={skills.length > 1 ? 'start' : 'center'}

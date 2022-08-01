@@ -3,6 +3,7 @@ import Header from './Header.form';
 import Summary from './Summary.form';
 import SkillsCarousel from './SkillsCarousel.form';
 import { IPage } from './types/types.d';
+import ContactMe from './ContactMe.form';
 
 export default class Portfolio implements IPage {
   readonly context: BrowserContext;
@@ -24,6 +25,10 @@ export default class Portfolio implements IPage {
 
   get skillsCarousel() {
     return new SkillsCarousel(this.page);
+  }
+
+  get contactMe() {
+    return new ContactMe(this.page);
   }
 
   async open() {

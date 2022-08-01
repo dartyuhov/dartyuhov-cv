@@ -1,5 +1,7 @@
 import Typewriter from 'typewriter-effect';
 
+import userData from '../../data/userData.json';
+
 import classes from './HelloText.module.css';
 
 const HelloText = () => (
@@ -7,7 +9,8 @@ const HelloText = () => (
     <Typewriter
       onInit={(typewriter) => {
         typewriter
-          .typeString('Hello, I\'m Dzmitry.')
+          .pauseFor(400)
+          .typeString(`Hello, I'm ${userData.name}.`)
           .start();
       }}
       options={{
@@ -18,16 +21,16 @@ const HelloText = () => (
     />
     <Typewriter
       onInit={(typewriter) => {
-        typewriter
-          .pauseFor(2000)
-          .typeString('Quality Assurance.')
-          .pauseFor(700)
-          .deleteAll()
-          .typeString('Test Automation.')
-          .pauseFor(700)
-          .deleteAll()
-          .typeString('Software Developer In Test.')
-          .start();
+        // wait for the first string to be typed
+        typewriter.pauseFor(2500);
+        // then start typing roles
+        userData.roles.forEach((line, index) => {
+          typewriter.typeString(line).pauseFor(700);
+          if (index !== userData.roles.length - 1) {
+            typewriter.deleteAll();
+          }
+        });
+        typewriter.start();
       }}
       options={{
         delay: 30,

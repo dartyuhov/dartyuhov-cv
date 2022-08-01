@@ -2,17 +2,23 @@ import { expect, Locator, Page } from '@playwright/test';
 
 type Config = {
     mask: Locator[]
-    debug: boolean
 }
 
-export default async (page: Page, config?: Partial<Config>) => {
-  if (config?.debug) {
-    await page.waitForTimeout(2000);
-  }
+export const shouldMatchPageSnapshot = async (page: Page, config?: Partial<Config>) => {
   await expect(page).toHaveScreenshot({
-    ...config,
     maxDiffPixelRatio: 0.02,
     scale: 'css',
     animations: 'disabled',
+    ...config,
+  });
+};
+
+export const shouldMatchElementSnapshot = async (locator: Locator, config?: Partial<Config>) => {
+  expect(await locator.screenshot({
+    scale: 'css',
+    animations: 'disabled',
+    ...config,
+  })).toMatchSnapshot({
+    maxDiffPixelRatio: 0.02,
   });
 };
