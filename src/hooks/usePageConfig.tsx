@@ -13,7 +13,7 @@ const defaultPageConfig = {
   skills: {
     start: 1,
     end: 2,
-    speed: 0.5,
+    speed: 0.2,
   },
   projects: {
     start: 2,
@@ -24,6 +24,10 @@ const defaultPageConfig = {
     start: 5.3,
     end: 6,
     speed: 0.5,
+  },
+  footer: {
+    start: 7,
+    end: 7.3,
   },
   factor: 1,
 };
@@ -44,7 +48,7 @@ const usePageConfig = () => {
       const projectsEnd = +((projectsHeight / viewportHeight) + 2).toFixed(0);
       setPageConfig({
         ...pageConfig,
-        pageCount: projectsEnd + 1.5,
+        pageCount: projectsEnd + 1.3,
         projects: {
           ...pageConfig.projects,
           end: projectsEnd,
@@ -53,6 +57,11 @@ const usePageConfig = () => {
           ...pageConfig.contactMe,
           start: projectsEnd,
           end: projectsEnd + 1,
+        },
+        footer: {
+          ...pageConfig.footer,
+          start: projectsEnd + 1.1,
+          end: projectsEnd + 1.3,
         },
       });
       setTimeout(() => setIsLoading(false), 700);

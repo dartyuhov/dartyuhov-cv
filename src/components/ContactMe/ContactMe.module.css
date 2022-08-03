@@ -1,26 +1,3 @@
-.mainContainer {
-    display: flex;
-    justify-content: center;
-    align-items: right;
-    width: 100%;
-    padding: 0;
-}
-
-h3 {
-    color: white;
-    position: fixed;
-    left: 10%;
-    top: 2%;
-    font-size: 1.5rem;
-}
-
-.mainContainer form {
-    border-radius: 1.5rem;
-    background: rgb(4, 4, 4, 0.6);
-    padding: 5rem;
-    width: 80%;
-}
-
 .mainContainer input {
     width: 50%;
 }
@@ -36,21 +13,29 @@ h3 {
     display: flex;
     justify-content: flex-end;
 }
+.submit {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 20%;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-radius: 3px;
+}
 
+.submit:hover {
+    background-color: white;
+    color: black;
+}
 @media only screen and (max-width: 800px) {
-    .mainContainer {
-        padding-top: 2rem;
-        margin-left: 1rem;
-        margin-right: 1rem;
-        width: 93%
-    }
-
     .mainContainer input {
-        width: 100%;
+        width: 90%;
     }
 
     .mainContainer textarea {
-        width: 100%;
+        width: 90%;
     }
 
     .controls {
@@ -61,21 +46,8 @@ h3 {
         padding: 3rem;
         width: 90%;
     }
-
-    h3 {
-        left: 10%;
-        top: 4%;
-        font-size: 1.3rem;
-    }
-}
-
-@media only screen and (max-width: 750px) {
-    h3 {
-        left: 9%;
-    }
-}
-@media only screen and (max-width: 650px) {
-    h3 {
-        left: 35%;
+    .submit {
+        width: 40%;
+        margin-right: 10%;
     }
 }

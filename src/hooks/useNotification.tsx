@@ -8,6 +8,8 @@ const useNotification = () => useCallback((props: {
     timeout?: number;
     type: 'success' | 'error' | 'loading';
 }) => {
+  console.log('notification triggered!');
+  console.log('timeout', props.timeout);
   const color = props.type === 'error' ? 'red' : undefined;
   let icon;
   let loading = false;

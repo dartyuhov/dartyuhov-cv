@@ -2,21 +2,26 @@
 import { FC } from 'react';
 import { ParallaxLayer } from '@react-spring/parallax';
 import { Carousel } from '@mantine/carousel';
+import { useMediaQuery } from '@mantine/hooks';
 
-import { Skill } from '../../models/types.d';
+import FlexCard from '../UI/FlexCard';
 import SkillBox from './SkillBox';
 
-import './Carousel.css';
+import { Skill } from '../../models/types.d';
+
+import classes from './Skills.module.css';
 import usePageConfig from '../../hooks/usePageConfig';
 
 type Props = {
   skills: Skill[]
+  offset: number
 }
 
-const Skills: FC<Props> = ({ skills }) => {
+const Skills: FC<Props> = ({ skills, offset }) => {
   const { pagesConfig } = usePageConfig();
+  const matchesTabletWidth = useMediaQuery('(max-width: 980px)', false);
 
-  const content = skills.length === 0 ? <div>No skills available</div>
+  const content = skills.length === 0 ? <div color="white">No skills available</div>
     : skills.map((skill, index) => (
       <Carousel.Slide key={index}>
         <SkillBox skillConfig={skill} key={index} />
@@ -26,25 +31,35 @@ const Skills: FC<Props> = ({ skills }) => {
   return (
     <ParallaxLayer
       id="skills"
-      offset={pagesConfig.skills.start}
+      offset={offset}
       factor={pagesConfig.factor}
       speed={pagesConfig.skills.speed}
     >
-      <div className="mainContainer">
-        <h3 className="title">Skills</h3>
+      <FlexCard
+        title="Skills"
+        className={classes.mainContainer}
+        contentClassName={classes.content}
+      >
         <Carousel
           loop
           align={skills.length > 1 ? 'start' : 'center'}
-          withIndicators={skills.length > 1}
           aria-label="Skills carousel"
           nextControlLabel="Next slide (right arrow)"
           previousControlLabel="Previous slide (left arrow)"
-          controlSize={50}
+          controlSize={matchesTabletWidth ? 30 : 40}
           withControls={skills.length > 1}
+          slidesToScroll={matchesTabletWidth ? 1 : 2}
+          styles={() => ({
+            slide: {
+              maxHeight: '100%',
+              paddingLeft: '1rem',
+              maxWidth: matchesTabletWidth ? '100%' : '50%',
+            },
+          })}
         >
           {content}
         </Carousel>
-      </div>
+      </FlexCard>
     </ParallaxLayer>
   );
 };

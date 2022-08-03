@@ -34,4 +34,11 @@ export default class Portfolio implements IPage {
   async open() {
     await this.page.goto('/');
   }
+
+  getNotification() {
+    return {
+      title: this.page.locator('.mantine-Notification-title'),
+      description: this.page.locator('.mantine-Notification-description'),
+    };
+  }
 }

@@ -10,8 +10,14 @@ import usePageConfig from '../../hooks/usePageConfig';
 import ProjectBox from './ProjectBox';
 
 import classes from './Projects.module.css';
+import FlexCard from '../UI/FlexCard';
 
-const Projects = forwardRef<HTMLDivElement, { projects: Project[] }>(({ projects }, ref) => {
+type ProjectsPropsType = {
+  offset: number;
+  projects: Project[];
+};
+
+const Projects = forwardRef<HTMLDivElement, ProjectsPropsType>(({ projects, offset }, ref) => {
   if (projects.length === 0) {
     return (<div style={{ color: 'white' }}>No projects found</div>);
   }
@@ -23,24 +29,45 @@ const Projects = forwardRef<HTMLDivElement, { projects: Project[] }>(({ projects
   return (
     <ParallaxLayer
       id="projects"
-      offset={pagesConfig.projects.start}
+      offset={offset}
       factor={pagesConfig.factor}
       speed={pagesConfig.projects.speed}
     >
-      <div ref={ref} className={classes.mainContainer}>
-        <Timeline radius="xl" active={years.length} bulletSize={26} lineWidth={2}>
-          <div className={classes.title}>Projects</div>
-          {Object.entries(grouppedByYear).map(([year, yearProjects], index) => (
-            <Timeline.Item key={index} title={year} lineVariant={index === years.length - 1 ? 'dashed' : 'solid'}>
-              <div className={classes.yearContainer}>
-                {yearProjects.map((project, indx) => (
-                  <ProjectBox key={indx} project={project} />
-                ))}
-              </div>
-            </Timeline.Item>
-          ))}
-          <Timeline.Item title={+years[years.length - 1] + 1} />
-        </Timeline>
+      {/* TODO move div ref to FlexCard */}
+      <div ref={ref}>
+        <FlexCard title="Projects" className={classes.mainContainer}>
+          <Timeline
+            radius="xl"
+            bulletSize={22}
+            lineWidth={2}
+            styles={(theme) => ({
+              itemTitle: {
+                color: 'white',
+                paddingTop: '0.2rem',
+              },
+              item: {
+                borderLeftColor: 'white',
+              },
+            })}
+          >
+            {Object.entries(grouppedByYear).map(([year, yearProjects], index) => (
+              <Timeline.Item
+                key={index}
+                title={year}
+                color="white"
+                lineVariant={index === years.length - 1 ? 'dashed' : 'solid'}
+                lineWidth={3}
+              >
+                <div className={classes.yearContainer}>
+                  {yearProjects.map((project, indx) => (
+                    <ProjectBox key={indx} project={project} />
+                  ))}
+                </div>
+              </Timeline.Item>
+            ))}
+            <Timeline.Item title={+years[years.length - 1] + 1} />
+          </Timeline>
+        </FlexCard>
       </div>
     </ParallaxLayer>
   );

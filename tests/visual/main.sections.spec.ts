@@ -2,6 +2,8 @@ import { expect } from '@playwright/test';
 import test from '../fixtures';
 import { shouldMatchPageSnapshot } from '../screenshot-utils';
 
+const userData = require('../../src/data/userData.json');
+
 test.describe('Sections visual tests', () => {
   test('should match skills section', async ({ portfolio }) => {
     await portfolio.header.goTo('Skills');
@@ -10,7 +12,7 @@ test.describe('Sections visual tests', () => {
   });
 
   test('should match about section', async ({ portfolio }) => {
-    await expect(portfolio.summary.helloText).toHaveText('Hello, I\'m Dzmitry.');
+    await expect(portfolio.summary.helloText).toHaveText(`Hello, I'm ${userData}.`);
     await shouldMatchPageSnapshot(portfolio.page, {
       mask: [
         portfolio.summary.gif,

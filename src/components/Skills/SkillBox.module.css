@@ -6,12 +6,11 @@
     padding: 1rem;
     margin: 1rem 0rem 3rem 2rem;
     width: 85%;
-    height: 50rem;
 }
 
 .name {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-left: 25%;
     padding-bottom: 1rem;
@@ -29,22 +28,22 @@
     color: white;
     align-self: left;
     margin: 0.2rem;
-    font-size: 1.3rem;
-    width: 35%;
+    font-size: 1.2rem;
+    width: 40%;
 }
 
 .skillBar {
-    height: 2rem;
+    height: 1.7rem;
     width: 100%;
     border-radius: 1rem;
     border: 1px solid rgba(199, 199, 199, 0.7);
 }
 
 .skillBarFill {
-    height: 2rem;
+    height: 1.7rem;
     width: 0;
     transition: all 500ms ease-out;
-    background: #04040465;
+    background: rgba(199, 199, 199, 0.7);
     border-radius: 1rem;
     text-align: center;
     vertical-align: middle;
@@ -84,18 +83,19 @@
     }
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 700px) {
     .skill {
         margin: 0.2rem;
         flex-direction: column;
         justify-content: center;
-        width: 100%;
+        padding-left: 1.4rem;
+        width: 80%;
     }
     .name {
         color: white;
         font-size: 1rem;
         padding-bottom: 0.5rem;
-        margin-left: 5%;
+        margin-left: 20%;
     }
 
     .skillName {
@@ -111,7 +111,6 @@
         flex-direction: column;
         justify-content: top;
         padding: 1rem;
-        margin: 0;
     }
 
     .skillBar {
@@ -124,8 +123,16 @@
     }
 }
 
-@media only screen and (max-height: 1220px) {
-    .skillContainer {
-        height: 35rem;
+@media only screen and (max-height: 500px) {
+    .skillBarFill {
+        height: 0.8rem;
+    }
+    .skillBar {
+        height: 0.8rem;
+    }
+    .skillName {
+        font-size: 1rem;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }

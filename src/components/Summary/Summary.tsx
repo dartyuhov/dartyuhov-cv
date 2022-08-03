@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { ParallaxLayer } from '@react-spring/parallax';
 
 import TerminalImage from './TerminalImage';
 import HelloText from './HelloText';
-import SocialLinks from './SocialLinks';
+import SocialLinks from '../Common/SocialLinks';
 
 import classes from './Summary.module.css';
 import avatar from '../../images/avatar.jpeg';
 import usePageConfig from '../../hooks/usePageConfig';
 
-const Summary = () => {
+const Summary: FC<{ offset: number}> = ({ offset }) => {
   const [terminalActive, setTerminalActive] = useState(false);
   const { pagesConfig } = usePageConfig();
 
@@ -24,13 +24,13 @@ const Summary = () => {
       {terminalActive && (
         <ParallaxLayer
           factor={pagesConfig.factor}
-          offset={pagesConfig.summary.start}
+          offset={offset}
           speed={pagesConfig.summary.speed - 0.1}
         >
           <TerminalImage />
         </ParallaxLayer>
       )}
-      <ParallaxLayer offset={pagesConfig.summary.start + 0.2} speed={pagesConfig.summary.speed}>
+      <ParallaxLayer offset={offset + 0.2} speed={pagesConfig.summary.speed}>
         <div className={classes.mainContainer}>
           <img src={avatar} alt="avatar" className={classes.photo} />
           <SocialLinks />

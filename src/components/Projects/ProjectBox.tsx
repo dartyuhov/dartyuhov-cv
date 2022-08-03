@@ -1,5 +1,4 @@
 import { FC, useState } from 'react';
-
 import { Project } from '../../models/types.d';
 import Spoiler from '../UI/Spoiler';
 import classes from './ProjectBox.module.css';
@@ -17,8 +16,9 @@ const ProjectBox: FC<{ project: Project }> = ({ project }) => {
         <span className={classes.roleName}>{project.role}</span>
       </p>
       <Spoiler
-        maxHeight={90}
+        maxHeight={100}
         onExpandClickDecorator={expandClickHandler}
+        className={classes.projectDescription}
       >
         {project.description}
       </Spoiler>

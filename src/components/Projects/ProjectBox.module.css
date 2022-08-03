@@ -1,7 +1,7 @@
 .project {
     width: 40%;
-    background: white;
-    border-radius: 10px;
+    background: rgba(252, 252, 252, 0.3);
+    border-radius: 15px;
     min-height: 27rem;
     border: 1px solid black;
     margin: 2rem;
@@ -9,22 +9,24 @@
 }
 
 .projectDescription {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    color: white;
 }
 
 h4 {
     margin: 0;
+    color: white;
 }
 
 .role {
     font-size: 0.9rem;
     font-weight: bold;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 .roleName {
     font-size: 0.9rem;
-    color: rgb(86, 85, 85);
+    color: white;
 }
 
 .techStack {
@@ -33,23 +35,22 @@ h4 {
     justify-content: bottom;
     align-items: stretch;
     flex-wrap: wrap;
+    margin-left: 0.5rem;
 }
 
 .tech {
     width: 6rem;
-    margin: 0.5rem;
-    height: 1.5rem;
+    margin: 0.4rem;
+    height: 1.4rem;
     max-width: 10rem;
     border-radius: 15px;
     text-align: center;
-    background-color: rgb(222, 236, 248);
-    border: 1px solid rgb(49, 153, 237);
+    background-color: rgb(252, 252, 252);
     overflow: hidden;
 }
 
 .tech span {
     font-size: 0.8rem;
-    color: black;
 }
 
 h4 {
@@ -62,7 +63,7 @@ h4 {
         width: 35%;
     }
 }
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 980px) {
     .project {
         width: 80%;
     }
@@ -72,7 +73,7 @@ h4 {
     .project {
         width: 80%;
         margin-left: 1rem;
-        max-height: 27rem;
+        min-height: 30rem;
     }
 
     .projectDescription {
@@ -83,7 +84,7 @@ h4 {
     }
 
     .tech {
-        width: 4.7rem;
+        width: 6.3rem;
         margin: 0.3rem;
         height: 1.5rem;
         max-width: 7rem;

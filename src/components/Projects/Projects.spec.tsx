@@ -12,7 +12,7 @@ jest.mock('@mantine/hooks', () => ({
 
 const renderProject = (projects: Project[]) => render(
   <Parallax pages={1}>
-    <Projects projects={projects} />
+    <Projects offset={1} projects={projects} />
   </Parallax>,
 );
 

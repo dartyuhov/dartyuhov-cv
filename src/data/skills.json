@@ -57,7 +57,8 @@
         "config": {
             "Jenkins" : 100,
             "Github Actions" : 60,
-            "Bitbucket Pipelines": 70
+            "Teamcity": 80,
+            "Bitbucket": 70
         }
     }
 ]

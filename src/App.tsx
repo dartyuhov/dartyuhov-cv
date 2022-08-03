@@ -1,6 +1,6 @@
 import { Parallax } from '@react-spring/parallax';
 import { LoadingOverlay } from '@mantine/core';
-import { Background, MainNavigation } from './components/Layout';
+import { Background, MainNavigation, Footer } from './components/Layout';
 import Summary from './components/Summary';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -53,10 +53,15 @@ const App = () => {
           visibility: isLoading ? 'hidden' : 'visible',
         }}
       >
-        <Summary />
-        <Skills skills={skills} />
-        <Projects ref={projectsSectionRef} projects={projects} />
+        <Summary offset={pagesConfig.summary.start} />
+        <Skills offset={pagesConfig.skills.start} skills={skills} />
+        <Projects
+          offset={pagesConfig.projects.start}
+          ref={projectsSectionRef}
+          projects={projects}
+        />
         <ContactMe offset={pagesConfig.contactMe.start} />
+        <Footer offset={pagesConfig.footer.start} />
       </Parallax>
     </>
   );

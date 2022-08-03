@@ -38,13 +38,13 @@ const config: PlaywrightTestConfig = {
 
   /* Configure projects for major browsers */
   projects: [
-    // {
-    //   name: 'chromium',
-    //   use: {
-    //     ...devices['Desktop Chrome'],
-    //     viewport: desktopViewport,
-    //   },
-    // },
+    {
+      name: 'chromium',
+      use: {
+        ...devices['Desktop Chrome'],
+        viewport: desktopViewport,
+      },
+    },
 
     {
       name: 'firefox',
@@ -96,17 +96,17 @@ const config: PlaywrightTestConfig = {
   // outputDir: 'test-results/',
 
   /* Run your local dev server before starting the tests */
-  webServer: {
-    command: 'npm run start',
-    url: 'http://localhost:3000/',
-    timeout: 20 * 1000,
-    reuseExistingServer: !process.env.CI,
-  },
+  // webServer: {
+  //   command: 'npm run start',
+  //   url: 'http://localhost:3000/',
+  //   timeout: 20 * 1000,
+  //   reuseExistingServer: !process.env.CI,
+  // },
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     screenshot: 'only-on-failure',
-    headless: process.env.HEADLESS ? process.env.HEADLESS === 'true' : false,
+    headless: process.env.HEADLESS ? process.env.HEADLESS === 'true' : true,
     baseURL: 'http://localhost:3000/',
   },
 };

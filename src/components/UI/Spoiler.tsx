@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import {
   FC, ReactNode, useState,
 } from 'react';
@@ -9,15 +10,20 @@ import classes from './Spoiler.module.css';
 type SpoilerProps = {
     children: ReactNode;
     maxHeight: number;
-    onExpandClickDecorator: () => void;
+    onExpandClickDecorator?: () => void;
+    className?: string;
 };
 
-const Spoiler: FC<SpoilerProps> = ({ children, maxHeight, onExpandClickDecorator }) => {
+const Spoiler: FC<SpoilerProps> = ({
+  children, maxHeight, onExpandClickDecorator, className = '',
+}) => {
   const { ref, height } = useElementSize();
   const [expanded, setExpanded] = useState(false);
 
   const onExpandClickHandler = () => {
-    onExpandClickDecorator();
+    if (onExpandClickDecorator) {
+      onExpandClickDecorator();
+    }
     setExpanded(((prevState) => !prevState));
   };
 
@@ -29,6 +35,7 @@ const Spoiler: FC<SpoilerProps> = ({ children, maxHeight, onExpandClickDecorator
           maxHeight: !expanded ? `${maxHeight}px` : '320px',
           overflow: 'hidden',
         }}
+        className={className}
       >
         {children}
       </div>

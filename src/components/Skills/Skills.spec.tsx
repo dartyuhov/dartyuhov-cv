@@ -8,7 +8,7 @@ import Skills from '.';
 import { Skill } from '../../models/types.d';
 
 const renderSkills = (skills: Skill[]) => {
-  render(<Parallax pages={1}><Skills skills={skills} /></Parallax>);
+  render(<Parallax pages={1}><Skills offset={1} skills={skills} /></Parallax>);
 };
 
 describe('Skills section', () => {

@@ -1,9 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useCallback, useEffect, useMemo } from 'react';
 import { useForm } from '@mantine/form';
-import {
-  TextInput, Textarea, Button,
-} from '@mantine/core';
+import { TextInput, Textarea } from '@mantine/core';
 import { ParallaxLayer } from '@react-spring/parallax';
 import useNotification from '../../hooks/useNotification';
 import useEmailJs from '../../hooks/useEmailJs';
@@ -12,6 +10,7 @@ import usePageConfig from '../../hooks/usePageConfig';
 import userData from '../../data/userData.json';
 
 import classes from './ContactMe.module.css';
+import FlexCard from '../UI/FlexCard';
 
 const labelProps = {
   style: {
@@ -101,8 +100,7 @@ const ContactMe: React.FC<{offset: number}> = ({ offset }) => {
       factor={pagesConfig.factor}
       speed={pagesConfig.contactMe.speed}
     >
-      <div className={classes.mainContainer}>
-        <h3>Contact me</h3>
+      <FlexCard title="Contact me" className={classes.mainContainer}>
         <form onSubmit={submitHandler}>
           <TextInput
             required
@@ -136,15 +134,14 @@ const ContactMe: React.FC<{offset: number}> = ({ offset }) => {
             name="Message"
             placeholder="Hi, i'd like to talk about..."
             labelProps={labelProps}
-            description="Please enter your message"
             resize="vertical"
             {...form.getInputProps('message')}
           />
           <div className={classes.controls}>
-            <Button type="submit" variant="default">Submit</Button>
+            <button type="submit" className={classes.submit}>Submit</button>
           </div>
         </form>
-      </div>
+      </FlexCard>
     </ParallaxLayer>
   ), [offset, form]);
 };
