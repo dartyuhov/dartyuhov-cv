@@ -1,0 +1,9 @@
+svg {
+    fill: rgb(146, 145, 145);
+    display: inline;
+}
+
+svg:hover {
+    fill: white;
+    transform: scale(1.3);
+}

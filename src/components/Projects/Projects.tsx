@@ -35,7 +35,10 @@ const Projects = forwardRef<HTMLDivElement, ProjectsPropsType>(({ projects, offs
     >
       {/* TODO move div ref to FlexCard */}
       <div ref={ref}>
-        <FlexCard title="Projects" className={classes.mainContainer}>
+        <FlexCard
+          title="Projects"
+          className={classes.mainContainer}
+        >
           <Timeline
             radius="xl"
             bulletSize={22}

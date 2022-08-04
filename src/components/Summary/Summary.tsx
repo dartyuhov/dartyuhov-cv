@@ -1,6 +1,7 @@
 import { useState, useEffect, FC } from 'react';
 import { ParallaxLayer } from '@react-spring/parallax';
 
+import { useMediaQuery } from '@mantine/hooks';
 import TerminalImage from './TerminalImage';
 import HelloText from './HelloText';
 import SocialLinks from '../Common/SocialLinks';
@@ -12,6 +13,7 @@ import usePageConfig from '../../hooks/usePageConfig';
 const Summary: FC<{ offset: number}> = ({ offset }) => {
   const [terminalActive, setTerminalActive] = useState(false);
   const { pagesConfig } = usePageConfig();
+  const matchesSmallScreen = useMediaQuery('(max-width: 1000px)');
 
   useEffect(() => {
     setTimeout(() => {
@@ -21,7 +23,7 @@ const Summary: FC<{ offset: number}> = ({ offset }) => {
 
   return (
     <div id="summary">
-      {terminalActive && (
+      {terminalActive && !matchesSmallScreen && (
         <ParallaxLayer
           factor={pagesConfig.factor}
           offset={offset}
@@ -33,7 +35,7 @@ const Summary: FC<{ offset: number}> = ({ offset }) => {
       <ParallaxLayer offset={offset + 0.2} speed={pagesConfig.summary.speed}>
         <div className={classes.mainContainer}>
           <img src={avatar} alt="avatar" className={classes.photo} />
-          <SocialLinks />
+          <SocialLinks className={classes.social} />
           <HelloText />
         </div>
       </ParallaxLayer>

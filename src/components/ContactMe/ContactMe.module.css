@@ -1,3 +1,8 @@
+
+.content {
+    min-width: 100%;
+}
+
 .mainContainer input {
     width: 50%;
 }
@@ -29,13 +34,25 @@
     background-color: white;
     color: black;
 }
+
+@media only screen and (min-width: 1440px) {
+    .content {
+        min-width: 80%;
+    }
+
+    .mainContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
 @media only screen and (max-width: 800px) {
     .mainContainer input {
-        width: 90%;
+        width: 100%;
     }
 
     .mainContainer textarea {
-        width: 90%;
+        width: 100%;
     }
 
     .controls {
@@ -43,11 +60,10 @@
     }
 
     .mainContainer form {
-        padding: 3rem;
+        padding: 1rem;
         width: 90%;
     }
     .submit {
         width: 40%;
-        margin-right: 10%;
     }
 }

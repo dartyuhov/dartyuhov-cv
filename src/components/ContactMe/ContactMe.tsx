@@ -100,7 +100,11 @@ const ContactMe: React.FC<{offset: number}> = ({ offset }) => {
       factor={pagesConfig.factor}
       speed={pagesConfig.contactMe.speed}
     >
-      <FlexCard title="Contact me" className={classes.mainContainer}>
+      <FlexCard
+        title="Contact me"
+        className={classes.mainContainer}
+        contentClassName={classes.content}
+      >
         <form onSubmit={submitHandler}>
           <TextInput
             required

@@ -88,14 +88,14 @@
         margin: 0.2rem;
         flex-direction: column;
         justify-content: center;
-        padding-left: 1.4rem;
-        width: 80%;
+        padding-left: 1.45rem;
+        width: 85%;
     }
     .name {
-        color: white;
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
         font-size: 1rem;
-        padding-bottom: 0.5rem;
-        margin-left: 20%;
     }
 
     .skillName {
@@ -110,7 +110,7 @@
     .skillContainer {
         flex-direction: column;
         justify-content: top;
-        padding: 1rem;
+        padding: 1.2rem;
     }
 
     .skillBar {
@@ -134,5 +134,11 @@
         font-size: 1rem;
         margin-top: 0;
         margin-bottom: 0;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .skillContainer {
+        margin-left: 0;
     }
 }

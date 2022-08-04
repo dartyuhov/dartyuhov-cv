@@ -122,7 +122,7 @@ describe('usePageConfig', () => {
 
     renderHook(() => usePageConfig());
     expect(mock).toBeCalledWith(expect.objectContaining({
-      pageCount: 5.5,
+      pageCount: 5.3,
       projects: {
         start: 2,
         end: 4,

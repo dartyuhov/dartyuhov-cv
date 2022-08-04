@@ -1,0 +1,26 @@
+.mainContainer {
+    display: flex;
+    background: rgba(0, 0, 0, 0.6);
+    margin: 0 2% 0 2%;
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+
+.title {
+    color: white;
+    font-size: 2rem;
+    margin-left: 5%;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+@media only screen and (max-width: 980px) {
+    .title {
+        width: 100%;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-left: 0;
+        padding-bottom: 0;
+    }
+}

@@ -34,5 +34,12 @@ describe('Summary screen', () => {
       const image = screen.queryByRole('img', { name: 'Running some tests...' });
       expect(image).toBeNull();
     });
+
+    it('should not render terminal if small screen', () => {
+      window.innerWidth = 1000;
+      renderSummary();
+      const image = screen.queryByRole('img', { name: 'Running some tests...' });
+      expect(image).toBeNull();
+    });
   });
 });

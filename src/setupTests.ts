@@ -26,6 +26,11 @@ jest.mock('./hooks/usePageConfig', () => ({
         end: 1,
         speed: 0.5,
       },
+      footer: {
+        start: 0,
+        end: 1,
+        speed: 0.5,
+      },
     },
     isLoading: false,
   }),

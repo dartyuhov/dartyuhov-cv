@@ -1,3 +1,7 @@
+.mainContainer {
+    padding-bottom: 3rem;
+}
+
 .yearContainer {
     display: flex;
     justify-content: left;
@@ -13,6 +17,7 @@
 
     .mainContainer {
         padding: 1rem;
+        padding-right: 2rem;
     }
 
     .title {

@@ -93,6 +93,9 @@ describe('Loading overlay', () => {
         skills: {
           start: 0,
         },
+        footer: {
+          start: 0,
+        },
       },
       isLoading: true,
     }) as any);
