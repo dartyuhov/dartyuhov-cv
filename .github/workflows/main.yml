@@ -32,7 +32,7 @@ jobs:
           REACT_APP_EMAIL_JS_TEMPLATE_ID: ${{ secrets.REACT_APP_EMAIL_JS_TEMPLATE_ID }}
 
     - name: Run unit tests
-      run: npm run test
+      run: npm run test:unit
 
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
