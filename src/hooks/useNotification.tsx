@@ -1,6 +1,6 @@
 import { ReactNode, useCallback } from 'react';
 import { showNotification } from '@mantine/notifications';
-import { IconCheck, IconX } from '@tabler/icons';
+import { IconX, IconCheck } from '@tabler/icons';
 
 const useNotification = () => useCallback((props: {
     message: ReactNode;
@@ -8,14 +8,16 @@ const useNotification = () => useCallback((props: {
     timeout?: number;
     type: 'success' | 'error' | 'loading';
 }) => {
-  const color = props.type === 'error' ? 'red' : undefined;
+  let color = 'white';
   let icon;
   let loading = false;
 
   if (props.type === 'success') {
-    icon = <IconCheck color="teal" />;
+    color = '#12b886';
+    icon = (<IconCheck fillOpacity={0} />);
   } else if (props.type === 'error') {
-    icon = <IconX color={color} />;
+    color = 'red';
+    icon = <IconX />;
   } else if (props.type === 'loading') {
     loading = true;
   }
@@ -23,6 +25,9 @@ const useNotification = () => useCallback((props: {
   showNotification({
     title: props.title,
     message: props.message,
+    styles: () => ({
+      icon: { backgroundColor: `${color} !important` },
+    }),
     radius: 'md',
     icon,
     loading,

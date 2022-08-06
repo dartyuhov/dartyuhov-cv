@@ -14,9 +14,9 @@ const desktopViewport = { width: 1920, height: 1080 };
 const config: PlaywrightTestConfig = {
   testDir: './tests/',
   snapshotDir: './tests/__snapshots__',
-  timeout: 35000,
+  timeout: process.env.CI ? 60000 : 20000,
   expect: {
-    timeout: 10000,
+    timeout: process.env.CI ? 30000 : 10000,
     toHaveScreenshot: {
       maxDiffPixelRatio: 0.05,
       animations: 'disabled',
@@ -28,7 +28,7 @@ const config: PlaywrightTestConfig = {
   },
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  workers: process.env.CI ? 8 : 4,
+  workers: process.env.CI ? 1 : 4,
   reporter: [['html', { open: 'never' }]],
 
   projects: [
@@ -84,7 +84,7 @@ const config: PlaywrightTestConfig = {
   webServer: {
     command: 'npm run start',
     url: 'http://localhost:3000/',
-    timeout: 20 * 1000,
+    timeout: 60 * 1000,
     reuseExistingServer: !process.env.CI,
   },
 };
