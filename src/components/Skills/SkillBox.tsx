@@ -18,7 +18,7 @@ const SkillBox: FC<{ skillConfig: Skill }> = ({ skillConfig }) => {
     .sort((a, b) => b[1] - a[1])
     .map((entry) => (
       <div className={classes.skill} key={entry[0]}>
-        <div className={classes.skillName}>{entry[0]}</div>
+        <div aria-label="Skill title" className={classes.skillName}>{entry[0]}</div>
         <div aria-label={`Skill of ${entry[0]}`} className={classes.skillBar}>
           <div
             aria-label={`Skill knowldege is ${entry[1]}%`}

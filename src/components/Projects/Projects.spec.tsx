@@ -16,51 +16,51 @@ const renderProject = (projects: Project[]) => render(
   </Parallax>,
 );
 
+const dummyProject = {
+  name: 'Project 1',
+  description: 'Description 1',
+  techStack: ['Tech 1', 'Tech 2'],
+  year: 2022,
+  role: 'Role 1',
+};
+
 describe('Projects', () => {
   it('should render error message if there are no projects', () => {
     renderProject([]);
     expect(screen.getByText('No projects found')).toBeInTheDocument();
   });
+
   it('should render projects', () => {
-    renderProject([{
-      name: 'Project 1',
-      description: 'Description 1',
-      techStack: ['Tech 1', 'Tech 2'],
-      year: 2020,
-      role: 'Role 1',
-    }]);
+    renderProject([dummyProject]);
     expect(screen.getByText('Project 1')).toBeInTheDocument();
+  });
+
+  it('should render title', () => {
+    renderProject([dummyProject]);
+    expect(screen.getByText('Projects')).toBeInTheDocument();
   });
 
   it('projects should be gropped by year', () => {
     renderProject([
       {
+        ...dummyProject,
         name: 'Project #1',
-        description: 'Description 1',
-        techStack: ['Tech 1', 'Tech 2'],
-        year: 2019,
-        role: 'Role 1',
+        year: 2020,
       },
       {
+        ...dummyProject,
         name: 'Project #2',
-        description: 'Description 1',
-        techStack: ['Tech 1', 'Tech 2'],
-        year: 2020,
-        role: 'Role 1',
+        year: 2021,
       },
       {
+        ...dummyProject,
         name: 'Project #3',
-        description: 'Description 1',
-        techStack: ['Tech 1', 'Tech 2'],
-        year: 2019,
-        role: 'Role 1',
+        year: 2021,
       },
       {
+        ...dummyProject,
         name: 'Project #4',
-        description: 'Description 1',
-        techStack: ['Tech 1', 'Tech 2'],
         year: 2020,
-        role: 'Role 1',
       },
     ]);
 
@@ -68,40 +68,32 @@ describe('Projects', () => {
     expect(projects).toHaveLength(4);
 
     expect(projects[0]).toHaveTextContent('Project #1');
-    expect(projects[1]).toHaveTextContent('Project #3');
+    expect(projects[1]).toHaveTextContent('Project #4');
     expect(projects[2]).toHaveTextContent('Project #2');
-    expect(projects[3]).toHaveTextContent('Project #4');
+    expect(projects[3]).toHaveTextContent('Project #3');
   });
 
   it('projects should sorted by year', () => {
     renderProject([
       {
+        ...dummyProject,
         name: 'Project #1',
-        description: 'Description 1',
-        techStack: ['Tech 1', 'Tech 2'],
         year: 2022,
-        role: 'Role 1',
       },
       {
+        ...dummyProject,
         name: 'Project #2',
-        description: 'Description 1',
-        techStack: ['Tech 1', 'Tech 2'],
-        year: 2018,
-        role: 'Role 1',
-      },
-      {
-        name: 'Project #3',
-        description: 'Description 1',
-        techStack: ['Tech 1', 'Tech 2'],
         year: 2019,
-        role: 'Role 1',
       },
       {
+        ...dummyProject,
+        name: 'Project #3',
+        year: 2021,
+      },
+      {
+        ...dummyProject,
         name: 'Project #4',
-        description: 'Description 1',
-        techStack: ['Tech 1', 'Tech 2'],
         year: 2020,
-        role: 'Role 1',
       },
     ]);
 
@@ -109,25 +101,15 @@ describe('Projects', () => {
     expect(projects).toHaveLength(4);
 
     expect(projects[0]).toHaveTextContent('Project #2');
-    expect(projects[1]).toHaveTextContent('Project #3');
-    expect(projects[2]).toHaveTextContent('Project #4');
+    expect(projects[1]).toHaveTextContent('Project #4');
+    expect(projects[2]).toHaveTextContent('Project #3');
     expect(projects[3]).toHaveTextContent('Project #1');
   });
 
   it('projects should render max year + 1', () => {
-    renderProject([
-      {
-        name: 'Project #1',
-        description: 'Description 1',
-        techStack: ['Tech 1', 'Tech 2'],
-        year: 2022,
-        role: 'Role 1',
-      },
-    ]);
+    renderProject([dummyProject]);
 
-    const years = screen.getAllByText('202', { exact: false });
-    expect(years).toHaveLength(2);
-    const yearPlusOne = screen.getByText('2023');
-    expect(yearPlusOne).toBeInTheDocument();
+    expect(screen.getAllByText('202', { exact: false })).toHaveLength(2);
+    expect(screen.getByText('2023')).toBeInTheDocument();
   });
 });

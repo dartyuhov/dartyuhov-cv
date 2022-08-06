@@ -15,14 +15,13 @@ jest.mock('@emailjs/browser');
 const sendNotificationMock = useNotification as jest.MockedFunction<typeof useNotification>;
 const sendEmailJsMock = send as jest.MockedFunction<typeof send>;
 
-// eslint-disable-next-line import/first
-
 describe('ContactMe', () => {
   beforeEach(() => render(
     <Parallax pages={1}>
       <ContactMe offset={0} />
     </Parallax>,
   ));
+
   it('should render contact me', () => {
     expect(screen.getByText('Contact me')).toBeInTheDocument();
   });
@@ -51,18 +50,15 @@ describe('ContactMe', () => {
     expect(messageInput).toBeRequired();
   });
 
-  it('should render submit button', () => {
-    expect(screen.getByRole('button', { name: 'Submit' })).toBeInTheDocument();
-  });
-
   ['test@test', 'test', '@test', 'test@', ''].forEach((email) => {
     it(`should render error if email is invalid ${email}`, () => {
       userEvent.type(screen.getByRole('textbox', { name: 'Your Email:' }), email);
       userEvent.type(screen.getByRole('textbox', { name: 'Your Name:' }), 'test');
       userEvent.type(screen.getByRole('textbox', { name: 'Subject:' }), 'test');
       userEvent.type(screen.getByRole('textbox', { name: 'Message:' }), 'test');
-      userEvent.click(screen.getByText('Submit'));
-      // mock
+
+      act(() => userEvent.click(screen.getByText('Submit')));
+
       expect(screen.getByText('Please enter a valid email')).toBeInTheDocument();
     });
   });
@@ -111,26 +107,20 @@ describe('ContactMe', () => {
   it('should render success message if there is no error with EmailJS', async () => {
     sendEmailJsMock.mockResolvedValue({ text: 'success', status: 200 });
     const mockNotification = jest.fn((props: any) => props);
-    sendNotificationMock.mockImplementation(jest.fn().mockImplementation(() => (props: any) => {
-      mockNotification(props);
-    }));
+    sendNotificationMock.mockImplementation(jest.fn()
+      .mockImplementation(() => (props: any) => mockNotification(props)));
+
     userEvent.type(screen.getByRole('textbox', { name: 'Your Email:' }), 'test@test.com');
     userEvent.type(screen.getByRole('textbox', { name: 'Your Name:' }), 'test');
     userEvent.type(screen.getByRole('textbox', { name: 'Subject:' }), 'test');
     userEvent.type(screen.getByRole('textbox', { name: 'Message:' }), 'test');
 
-    await act(async () => {
-      userEvent.click(screen.getByText('Submit'));
-    });
+    act(() => userEvent.click(screen.getByText('Submit')));
 
     await waitFor(() => {
-      expect(mockNotification).toBeCalledWith(
-        {
-          message: 'Your email is on the way!',
-          title: 'Sending...',
-          type: 'loading',
-        },
-      );
+      expect(mockNotification).toBeCalledWith(expect.objectContaining({
+        title: 'Sending...',
+      }));
       expect(mockNotification).toBeCalledWith({
         message: 'Your mail has been sent! I will reach you out you as soon as possible!',
         title: 'Success',
@@ -141,12 +131,10 @@ describe('ContactMe', () => {
   });
 
   it('should reset from after success', async () => {
-    jest.useFakeTimers();
     sendEmailJsMock.mockResolvedValue({ text: 'success', status: 200 });
-    const mockNotification = jest.fn((props: any) => props);
-    sendNotificationMock.mockImplementation(jest.fn().mockImplementation(() => (props: any) => {
-      mockNotification(props);
-    }));
+    const mockNotification = jest.fn();
+    sendNotificationMock.mockImplementation(jest.fn()
+      .mockImplementation(() => (props: any) => mockNotification(props)));
 
     const emailInput = screen.getByRole('textbox', { name: 'Your Email:' });
     userEvent.type(emailInput, 'test@test.com');
@@ -156,15 +144,11 @@ describe('ContactMe', () => {
     userEvent.type(subjectInput, 'test');
     const messageInput = screen.getByRole('textbox', { name: 'Message:' });
     userEvent.type(messageInput, 'test');
-    await act(async () => {
-      userEvent.click(screen.getByText('Submit'));
-    });
-    expect(mockNotification).toBeCalledWith({
-      message: 'Your mail has been sent! I will reach you out you as soon as possible!',
-      title: 'Success',
-      type: 'success',
-      timeout: 5000,
-    });
+
+    jest.useFakeTimers();
+    await act(async () => userEvent.click(screen.getByText('Submit')));
+
+    expect(mockNotification).toBeCalledWith(expect.objectContaining({ title: 'Success' }));
     jest.runOnlyPendingTimers();
     jest.useRealTimers();
     await waitFor(() => {

@@ -45,11 +45,11 @@ describe('App', () => {
     expect(skills).toBeInTheDocument();
   });
 
-  describe('should handle useParallax scrollTo', () => {
+  describe('Navigation buttons should scrollTo section taking into account header', () => {
     it('should scroll to skills', () => {
       const skillsButton = screen.getByRole('button', { name: 'Skills' });
       userEvent.click(skillsButton);
-      expect(mockedScrollTo).toHaveBeenCalledWith(0 - 0.05);
+      expect(mockedScrollTo).toHaveBeenCalledWith(-0.05);
     });
 
     it('should scroll to about', () => {
@@ -57,15 +57,17 @@ describe('App', () => {
       userEvent.click(aboutButton);
       expect(mockedScrollTo).toHaveBeenCalledWith(0);
     });
+
     it('should scroll to projects', () => {
-      const projectsButton = screen.getByRole('button', { name: 'Projects' });
+      const projectsButton = screen.getByRole('button', { name: 'My Projects' });
       userEvent.click(projectsButton);
-      expect(mockedScrollTo).toHaveBeenCalledWith(0 - 0.1);
+      expect(mockedScrollTo).toHaveBeenCalledWith(-0.1);
     });
+
     it('should scroll to contact', () => {
       const contactMe = screen.getByRole('button', { name: 'Contact me' });
       userEvent.click(contactMe);
-      expect(mockedScrollTo).toHaveBeenCalledWith(0 - 0.05);
+      expect(mockedScrollTo).toHaveBeenCalledWith(-0.05);
     });
   });
 });
@@ -81,26 +83,18 @@ describe('Loading overlay', () => {
     jest.spyOn(pageConfig, 'default').mockImplementationOnce(() => ({
       pagesConfig: {
         pageCount: 5,
-        contactMe: {
-          start: 0,
-        },
-        projects: {
-          start: 0,
-        },
-        summary: {
-          start: 0,
-        },
-        skills: {
-          start: 0,
-        },
-        footer: {
-          start: 0,
-        },
+        contactMe: { start: 0 },
+        projects: { start: 0 },
+        summary: { start: 0 },
+        skills: { start: 0 },
+        footer: { start: 0 },
       },
       isLoading: true,
     }) as any);
+
     const { container } = render(<App />);
-    const loadingOverlay = container.querySelector('[class^="mantine-LoadingOverlay"]');
+
+    const loadingOverlay = container.querySelector('[class*="LoadingOverlay"]');
     expect(loadingOverlay).toBeInTheDocument();
   });
 });

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ProjectBox from './ProjectBox';
 
@@ -52,5 +52,45 @@ describe('Project', () => {
     userEvent.click(showMoreButton);
     expect(screen.queryByText(dummyProject.techStack[0])).toBeNull();
     expect(screen.queryByText(dummyProject.techStack[1])).toBeNull();
+  });
+
+  it('should render tech stack after hide', async () => {
+    const showMoreButton = screen.getByRole('button', { name: 'Show more' });
+    userEvent.click(showMoreButton);
+    expect(screen.queryByText(dummyProject.techStack[0])).toBeNull();
+    expect(screen.queryByText(dummyProject.techStack[1])).toBeNull();
+    const hide = screen.getByRole('button', { name: 'Hide' });
+    jest.useFakeTimers();
+
+    userEvent.click(hide);
+    jest.runOnlyPendingTimers();
+    await waitFor(() => {
+      expect(screen.queryByText(dummyProject.techStack[0])).toBeInTheDocument();
+      expect(screen.queryByText(dummyProject.techStack[1])).toBeInTheDocument();
+    });
+  });
+});
+
+describe('Project', () => {
+  it('should allow to render html in description', async () => {
+    render(
+      <ProjectBox project={{
+        ...dummyProject,
+        description: '<div data-testid="test">lorem ipsum dolor sit amet</div>',
+      }}
+      />,
+    );
+    expect(screen.getByTestId('test')).toBeInTheDocument();
+  });
+
+  it('should not render tech stack if techStack length === 0', async () => {
+    render(
+      <ProjectBox project={{
+        ...dummyProject,
+        techStack: [],
+      }}
+      />,
+    );
+    expect(screen.queryByText('Technologies:')).toBeNull();
   });
 });

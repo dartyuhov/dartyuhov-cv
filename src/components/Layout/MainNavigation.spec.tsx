@@ -19,7 +19,7 @@ function renderMainNavigation() {
 
 describe('Window resizing changes main navigation ', () => {
   [1024, 768].forEach((width) => {
-    it(`should render header for screen size ${width}`, () => {
+    it(`should render navigation for screen size ${width}`, () => {
       window.innerWidth = width;
       renderMainNavigation();
 
@@ -65,7 +65,7 @@ describe('Main Navigation for desktop', () => {
     expect(buttons).toHaveLength(4);
   });
 
-  ['About', 'Skills', 'Projects', 'Contact me'].forEach((text) => {
+  ['About', 'Skills', 'My Projects', 'Contact me'].forEach((text) => {
     it(`should render button with text ${text}`, () => {
       const button = screen.getByText(text);
       expect(button).toBeInTheDocument();
@@ -88,7 +88,7 @@ describe('Main Navigation for mobile', () => {
     const mainNav = screen.queryByRole('navigation');
     expect(mainNav).toBeNull();
 
-    const buttons = screen.queryAllByRole('button', { name: /About|Skills|Projects|Contact me/i });
+    const buttons = screen.queryAllByRole('button', { name: /About|Skills|My Projects|Contact me/i });
     expect(buttons).toHaveLength(0);
   });
 
@@ -110,20 +110,18 @@ describe('Main Navigation for mobile', () => {
     expect(leftMenu).not.toBeInTheDocument();
   });
 
-  ['About', 'Skills', 'Projects', 'Contact me'].forEach((text) => {
+  ['About', 'Skills', 'My Projects', 'Contact me'].forEach((text) => {
     it(`should render button with text ${text}`, async () => {
       const burger = await screen.findByRole('button', { name: 'Open navigation' });
+      expect(screen.queryByRole('button', { name: text })).not.toBeInTheDocument();
       userEvent.click(burger);
-      const button = screen.getByText(text);
-      expect(button).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: text })).toBeInTheDocument();
     });
 
-    it(`should render button with text ${text}`, async () => {
+    it(`should trigger '${text}' button's action`, async () => {
       jest.useFakeTimers();
-      const burger = await screen.findByRole('button', { name: 'Open navigation' });
-      userEvent.click(burger);
-      const button = screen.getByText(text);
-      userEvent.click(button);
+      userEvent.click(screen.getByRole('button', { name: 'Open navigation' }));
+      userEvent.click(screen.getByRole('button', { name: text }));
 
       act(() => {
         jest.runOnlyPendingTimers();

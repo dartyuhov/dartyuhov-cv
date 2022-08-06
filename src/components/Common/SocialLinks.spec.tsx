@@ -7,19 +7,14 @@ describe('Social links', () => {
   });
 
   it('should render social links', () => {
-    const instagram = screen.getByRole('link', { name: 'instagram.svg' });
-    const linkedin = screen.getByRole('link', { name: 'linkedin.svg' });
-    const github = screen.getByRole('link', { name: 'github.svg' });
-
-    expect(linkedin).toBeInTheDocument();
-    expect(github).toBeInTheDocument();
-    expect(instagram).toBeInTheDocument();
+    const socialLinks = screen.getByLabelText('Social links');
+    expect(socialLinks).toBeInTheDocument();
   });
 
   it('should redirect to link', () => {
-    const instagram = screen.getByRole('link', { name: 'instagram.svg' });
-    const linkedin = screen.getByRole('link', { name: 'linkedin.svg' });
-    const github = screen.getByRole('link', { name: 'github.svg' });
+    const instagram = screen.getByLabelText('Instagram link');
+    const linkedin = screen.getByLabelText('LinkedIn link');
+    const github = screen.getByLabelText('GitHub link');
 
     expect(linkedin).toHaveAttribute('href', 'https://www.linkedin.com/in/dmitry-artyuhov-75873913b');
     expect(github).toHaveAttribute('href', 'https://github.com/dartyuhov');
@@ -27,9 +22,9 @@ describe('Social links', () => {
   });
 
   it('should open new tab after click to link', () => {
-    const instagram = screen.getByRole('link', { name: 'instagram.svg' });
-    const linkedin = screen.getByRole('link', { name: 'linkedin.svg' });
-    const github = screen.getByRole('link', { name: 'github.svg' });
+    const instagram = screen.getByLabelText('Instagram link');
+    const linkedin = screen.getByLabelText('LinkedIn link');
+    const github = screen.getByLabelText('GitHub link');
 
     expect(linkedin).toHaveAttribute('target', '_blank');
     expect(github).toHaveAttribute('target', '_blank');

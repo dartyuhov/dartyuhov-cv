@@ -4,7 +4,7 @@
         "config" : {
             "Java" : 90,
             "JavaScript" : 80,
-            "TypeScript" : 70,
+            "TypeScript" : 80,
             "Groovy" : 60,
             "C#" : 50,
             "Scala" : 30
@@ -13,22 +13,18 @@
     {
         "name" : "Development tools",
         "config": {
+            "Node.js": 80,
             "Spring" : 60,
             "React": 70,
-            "CSS": 50,
-            "HTML": 90,
-            "Redux": 50,
-            "Next.js": 70,
-            "Node.js": 80,
-            "Express": 60
+            "Redux": 60
         }
     },
     {
         "name" : "Databases",
         "config": {
-            "Mysql" : 90,
+            "MySQL" : 90,
             "Postgres" : 80,
-            "Mongo" : 50
+            "DB2": 80
         }
     },
     {
@@ -38,18 +34,12 @@
             "Cucumber" : 100,
             "Playwright" : 100,
             "Selenide": 70,
-            "Appium": 70,
+            "Appium": 80,
             "Jest": 80,
             "Junit5": 90,
+            "TestNG": 100,
+            "Cypress": 50,
             "Webdriverio": 70
-        }
-    },
-    {
-        "name": "Other",
-        "config": {
-            "docker": 80,
-            "git": 100,
-            "ansible": 30
         }
     },
     {

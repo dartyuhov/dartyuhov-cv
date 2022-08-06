@@ -12,10 +12,11 @@ type SpoilerProps = {
     maxHeight: number;
     onExpandClickDecorator?: () => void;
     className?: string;
+    ariaLabel?: string;
 };
 
 const Spoiler: FC<SpoilerProps> = ({
-  children, maxHeight, onExpandClickDecorator, className = '',
+  children, maxHeight, onExpandClickDecorator, className, ariaLabel,
 }) => {
   const { ref, height } = useElementSize();
   const [expanded, setExpanded] = useState(false);
@@ -33,14 +34,14 @@ const Spoiler: FC<SpoilerProps> = ({
         ref={ref}
         style={{
           maxHeight: !expanded ? `${maxHeight}px` : '320px',
-          overflow: 'hidden',
+          overflowY: expanded ? 'scroll' : 'hidden',
         }}
-        className={className}
+        className={className ? `${className} ${classes.mainContainer}` : classes.mainContainer}
+        aria-label={ariaLabel}
       >
         {children}
       </div>
-      {height >= maxHeight
-        && (
+      {height >= maxHeight && (
         <button
           className={classes.expandButton}
           onClick={onExpandClickHandler}
@@ -48,7 +49,7 @@ const Spoiler: FC<SpoilerProps> = ({
         >
           {expanded ? 'Hide' : 'Show more'}
         </button>
-        )}
+      )}
     </>
   );
 };

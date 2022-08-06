@@ -1,28 +1,15 @@
 import { Locator, BrowserContext, Page } from '@playwright/test';
-import { IForm } from './types/types.d';
+import { SocialNetworkLinkType } from '../../models/types.d';
+import { IForm } from '../types/types.d';
 
-export type SocialNetworkLinkType = 'GitHub' | 'Instagram' | 'LinkedIn';
-
-export default class Summary implements IForm {
+export default class Footer implements IForm {
   public readonly locator: Locator;
 
   private readonly context: BrowserContext;
 
   constructor(private readonly page: Page, context: BrowserContext) {
-    this.locator = page.locator('#summary');
+    this.locator = page.locator('#footer');
     this.context = context;
-  }
-
-  get helloText() {
-    return this.locator.locator('span[class^=HelloText_hello]');
-  }
-
-  get gif() {
-    return this.locator.locator('[class^="TerminalImage_gif"]');
-  }
-
-  get shortDescription() {
-    return this.locator.locator('span[class^=HelloText_shortDescription]');
   }
 
   async goToSocial(socialNetwork: SocialNetworkLinkType) {

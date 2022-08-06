@@ -6,10 +6,17 @@ import classes from './ProjectBox.module.css';
 const ProjectBox: FC<{ project: Project }> = ({ project }) => {
   const [expanded, setExpanded] = useState(false);
 
-  const expandClickHandler = () => setExpanded((prevState) => !prevState);
+  const expandClickHandler = () => {
+    if (!expanded) {
+      setExpanded(true);
+    } else {
+      setTimeout(() => setExpanded(false), 300);
+    }
+  };
+
   return (
     <div className={classes.project}>
-      <h4 className={classes.projectName}>{project.name}</h4>
+      <h4 aria-label="Project name" className={classes.projectName}>{project.name}</h4>
       <p className={classes.role}>
         Role:
         {' '}
@@ -18,21 +25,22 @@ const ProjectBox: FC<{ project: Project }> = ({ project }) => {
       <Spoiler
         maxHeight={100}
         onExpandClickDecorator={expandClickHandler}
-        className={classes.projectDescription}
+        ariaLabel="Project description"
       >
-        {project.description}
+        {/* eslint-disable-next-line react/no-danger */}
+        <div dangerouslySetInnerHTML={{ __html: project.description }} style={{ color: 'white' }} />
       </Spoiler>
-      {!expanded && (
-        <>
-          <h4>Technologies:</h4>
-          <div className={classes.techStack}>
-            {project.techStack.map((tech, index) => (
-              <div key={index} className={classes.tech}>
-                <span>{tech}</span>
-              </div>
-            ))}
-          </div>
-        </>
+      {!expanded && project.techStack.length > 0 && (
+      <>
+        <h4 className={classes.techStackTitle}>Technologies:</h4>
+        <div className={classes.techStack}>
+          {project.techStack.map((tech, index) => (
+            <div key={index} className={classes.tech}>
+              <span>{tech}</span>
+            </div>
+          ))}
+        </div>
+      </>
       )}
     </div>
   );

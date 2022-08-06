@@ -1,7 +1,9 @@
 import { Page } from '@playwright/test';
 
+const EMAIL_JS_SEND_EMAIL_URI = 'https://api.emailjs.com/api/v1.0/email/send';
+
 export const mockEmailSendSuccess = (page: Page) => page.route(
-  'https://api.emailjs.com/api/v1.0/email/send',
+  EMAIL_JS_SEND_EMAIL_URI,
   (route) => {
     route.fulfill({
       status: 200,
@@ -13,7 +15,7 @@ export const mockEmailSendSuccess = (page: Page) => page.route(
 );
 
 export const mockEmailSendReject = (page: Page) => page.route(
-  'https://api.emailjs.com/api/v1.0/email/send',
+  EMAIL_JS_SEND_EMAIL_URI,
   (route) => {
     route.fulfill({
       status: 500,

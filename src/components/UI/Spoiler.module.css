@@ -13,3 +13,9 @@
         margin: 0;
     }
 }
+.mainContainer {
+    transition: max-height 0.3s ease-in-out;
+    scrollbar-width: auto;
+    -webkit-box-shadow: inset 300px 3px 5px 5px rgba(255, 255, 255, );
+    box-shadow: inset 300px 3px 5px 5px rgba(255, 255, 255, );
+}

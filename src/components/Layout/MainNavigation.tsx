@@ -45,16 +45,40 @@ const MainNavigation: FC<Props> = ({
     <nav className={classes['main-nav']}>
       <ul>
         <li>
-          <button type="button" onClick={navClickDecorator(onAboutClick)}>About</button>
+          <button
+            type="button"
+            onClick={navClickDecorator(onAboutClick)}
+            aria-label="About"
+          >
+            About
+          </button>
         </li>
         <li>
-          <button type="button" onClick={navClickDecorator(onSkillsClick)}>Skills</button>
+          <button
+            type="button"
+            onClick={navClickDecorator(onSkillsClick)}
+            aria-label="Skills"
+          >
+            Skills
+          </button>
         </li>
         <li>
-          <button type="button" onClick={navClickDecorator(onProjectsClick)}>Projects</button>
+          <button
+            type="button"
+            onClick={navClickDecorator(onProjectsClick)}
+            aria-label="My Projects"
+          >
+            My Projects
+          </button>
         </li>
         <li>
-          <button type="button" onClick={navClickDecorator(onContactClick)}>Contact me</button>
+          <button
+            type="button"
+            onClick={navClickDecorator(onContactClick)}
+            aria-label="Contact me"
+          >
+            Contact me
+          </button>
         </li>
       </ul>
     </nav>

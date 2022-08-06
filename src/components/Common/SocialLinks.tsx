@@ -15,10 +15,10 @@ type SocialLinksPropsType = {
 };
 
 const SocialLinks: FC<SocialLinksPropsType> = ({ className }) => (
-  <div className={className ? `${className} ${classes.social}` : className}>
+  <div aria-label="Social links" className={className ? `${className} ${classes.social}` : className}>
     <a
       target="_blank"
-      aria-labelledby="LinkedIn link"
+      aria-label="LinkedIn link"
       href={socialLinks.linkedin}
       rel="noreferrer"
     >
@@ -26,7 +26,7 @@ const SocialLinks: FC<SocialLinksPropsType> = ({ className }) => (
     </a>
     <a
       target="_blank"
-      aria-labelledby="GitHub Link"
+      aria-label="GitHub link"
       href={socialLinks.github}
       rel="noreferrer"
     >
@@ -34,7 +34,7 @@ const SocialLinks: FC<SocialLinksPropsType> = ({ className }) => (
     </a>
     <a
       target="_blank"
-      aria-labelledby="Instagram Link"
+      aria-label="Instagram link"
       href={socialLinks.instagram}
       rel="noreferrer"
     >

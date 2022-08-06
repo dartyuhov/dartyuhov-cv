@@ -16,6 +16,13 @@ const renderSkills = (skills: Skill[]) => render(
   </Parallax>,
 );
 
+const dummySkill = {
+  name: 'Skill name',
+  config: {
+    skill1: 100,
+  },
+};
+
 describe('Skills section', () => {
   beforeEach(() => {
     setupIntersectionMocking(jest.fn);
@@ -26,15 +33,7 @@ describe('Skills section', () => {
   });
 
   it('should render skills', () => {
-    const mockedSkills = [
-      {
-        name: 'Skill name',
-        config: {
-          skill1: 100,
-        },
-      },
-    ];
-    renderSkills(mockedSkills);
+    renderSkills([dummySkill]);
     const skillsSlider = screen.getByLabelText('Skills carousel');
     expect(skillsSlider).toBeInTheDocument();
   });
@@ -45,143 +44,125 @@ describe('Skills section', () => {
     expect(message).toBeInTheDocument();
   });
 
-  it('should not show contols if only one skill', () => {
-    const mockedSkils = [
-      {
-        name: 'Skill name',
-        config: {
-          skill1: 100,
-        },
-      },
-    ];
-    renderSkills(mockedSkils);
-    const leftArrow = screen.queryByLabelText('Previous slide (left arrow)');
-    expect(leftArrow).toBeNull();
-    const rightArrow = screen.queryByLabelText('Next slide (right arrow)');
-    expect(rightArrow).toBeNull();
-  });
+  const mockScreenType = (screenType: useScreenType.ScreenType) => jest.spyOn(useScreenType, 'default').mockReturnValue(screenType);
 
-  it('should show contols if more than one skill', () => {
-    const mockedSkills = [
-      {
-        name: 'Skill name',
-        config: {
-          skill1: 100,
-        },
-      },
-      {
-        name: 'Skill name 2',
-        config: {
-          skill1: 100,
-        },
-      },
-      {
-        name: 'Skill name 3',
-        config: {
-          skill1: 100,
-        },
-      },
-      {
-        name: 'Skill name 4',
-        config: {
-          skill1: 100,
-        },
-      },
-    ];
-    renderSkills(mockedSkills);
-    const leftArrow = screen.getByLabelText('Previous slide (left arrow)');
-    expect(leftArrow).toBeInTheDocument();
-    const rightArrow = screen.getByLabelText('Next slide (right arrow)');
-    expect(rightArrow).toBeInTheDocument();
-  });
+  describe('Carousel controls/indicators', () => {
+    [
+      { screenType: 'mobile', slidesCount: 1 },
+      { screenType: 'tablet', slidesCount: 2 },
+      { screenType: 'desktop', slidesCount: 2 },
+      { screenType: 'widescreen', slidesCount: 3 },
+    ].forEach((testData) => {
+      beforeAll(() => {
+        window.innerWidth = 100;
+      });
 
-  function mockScreenType(screenType: useScreenType.ScreenType) {
-    jest.spyOn(useScreenType, 'default').mockReturnValue(screenType);
-  }
+      it(`should not show controls if there is ${testData.slidesCount} on ${testData.screenType} screen`, async () => {
+        mockScreenType(testData.screenType as useScreenType.ScreenType);
+        renderSkills(Array.from({ length: testData.slidesCount }, () => ({ ...dummySkill })));
 
-  [{
-    type: 'mobile',
-    expected: 1,
-  },
-  {
-    type: 'tablet',
-    expected: 2,
-  },
-  {
-    type: 'desktop',
-    expected: 2,
-  },
-  {
-    type: 'widescreen',
-    expected: 3,
-  },
-  ].forEach((testData) => {
-    it(`should show arrow button(s) if there is ${testData.expected} (exactly)) slides on ${testData.type} screen`, async () => {
-      mockScreenType(testData.type as useScreenType.ScreenType);
-      window.innerWidth = 100;
-      const mockedSkills: Skill[] = Array.from({ length: testData.expected }, (_, index) => ({
-        name: `Skill name ${index}`,
-        config: {
-          skill1: 100,
-        },
-      }));
-      renderSkills(mockedSkills);
+        expect(screen.queryByLabelText('Next slide (right arrow)')).toBeNull();
+        expect(screen.queryByLabelText('Previous slide (left arrow)')).toBeNull();
+      });
 
-      const nextSlidesButton = screen.queryByLabelText('Next slide (right arrow)');
-      expect(nextSlidesButton).toBeNull();
-    });
+      it(`should show controls  if there is ${testData.slidesCount + 1} on ${testData.screenType} screen`, async () => {
+        mockScreenType(testData.screenType as useScreenType.ScreenType);
+        renderSkills(Array.from({ length: testData.slidesCount + 1 }, () => ({ ...dummySkill })));
 
-    it(`should show arrow button(s) if there is ${testData.expected} + 1 slides on ${testData.type} screen`, async () => {
-      mockScreenType(testData.type as useScreenType.ScreenType);
-      window.innerWidth = 100;
-      const mockedSkills: Skill[] = Array.from({ length: testData.expected + 1 }, (_, index) => ({
-        name: `Skill name ${index}`,
-        config: {
-          skill1: 100,
-        },
-      }));
-      renderSkills(mockedSkills);
+        expect(screen.getByLabelText('Next slide (right arrow)')).toBeInTheDocument();
+        expect(screen.getByLabelText('Previous slide (left arrow)')).toBeInTheDocument();
+      });
 
-      const nextSlidesButton = screen.getByLabelText('Next slide (right arrow)');
-      expect(nextSlidesButton).toBeInTheDocument();
+      it(`should show indicatores if ${testData.slidesCount + 1} slides on ${testData.screenType} screen`, async () => {
+        mockScreenType(testData.screenType as useScreenType.ScreenType);
+        renderSkills(Array.from({ length: testData.slidesCount + 1 }, () => ({ ...dummySkill })));
+
+        expect(document.querySelector('.mantine-Carousel-indicators')).toBeInTheDocument();
+      });
+
+      it(`should not  show indicatores if ${testData.slidesCount} slides on ${testData.screenType} screen`, async () => {
+        mockScreenType(testData.screenType as useScreenType.ScreenType);
+        renderSkills(Array.from({ length: testData.slidesCount }, () => ({ ...dummySkill })));
+
+        expect(document.querySelector('.mantine-Carousel-indicators')).toBeNull();
+      });
     });
   });
 
-  describe('Autoplay', () => {
+  describe('Carousel parameterms on different screen types', () => {
     jest.mock('@mantine/carousel');
     const CarouselMock = Carousel as jest.MockedObject<typeof Carousel>;
-    function mockCarousel(screenType: useScreenType.ScreenType) {
+
+    const prepareMocks = (screenType: useScreenType.ScreenType) => {
       mockScreenType(screenType);
-      const mock = jest.fn();
+      const pluginsMock = jest.fn();
+      const slidesToScrollMock = jest.fn();
+      const alignMock = jest.fn();
       (CarouselMock as any).render = (props: any) => {
-        mock(props.plugins);
+        pluginsMock(props.plugins);
+        slidesToScrollMock(props.slidesToScroll);
+        alignMock(props.align);
         return (<div />);
       };
-      return mock;
-    }
+      return {
+        pluginsMock,
+        slidesToScrollMock,
+        alignMock,
+      };
+    };
 
     ['tablet', 'desktop', 'widescreen'].forEach((screenType) => {
       it(`autoplay should be enabled ${screenType} screen`, async () => {
-        const mock = mockCarousel(screenType as useScreenType.ScreenType);
+        const { pluginsMock } = prepareMocks(screenType as useScreenType.ScreenType);
         renderSkills([]);
         mockAllIsIntersecting(true);
-        expect(mock).lastCalledWith(expect.arrayContaining([expect.any(Object)]));
+        expect(pluginsMock).lastCalledWith(expect.arrayContaining([expect.any(Object)]));
+      });
+    });
+
+    [
+      { slidesToScroll: 3, screenType: 'widescreen' },
+      { slidesToScroll: 2, screenType: 'tablet' },
+      { slidesToScroll: 2, screenType: 'desktop' },
+      { slidesToScroll: 1, screenType: 'mobile' },
+    ].forEach((testData) => {
+      it(`should scroll by ${testData.slidesToScroll} on ${testData.screenType}`, () => {
+        const { slidesToScrollMock } = prepareMocks(
+          testData.screenType as useScreenType.ScreenType,
+        );
+        renderSkills([]);
+
+        expect(slidesToScrollMock).lastCalledWith(testData.slidesToScroll);
       });
     });
 
     it('autoplay should be enabled only in viewport screen', async () => {
-      const mock = mockCarousel('desktop');
+      const { pluginsMock } = prepareMocks('desktop');
       renderSkills([]);
       mockAllIsIntersecting(false);
-      expect(mock).lastCalledWith(expect.arrayContaining([]));
+      expect(pluginsMock).lastCalledWith(expect.arrayContaining([]));
     });
 
     it('autoplay should be disabled mobile screen', async () => {
-      const mock = mockCarousel('mobile');
+      const { pluginsMock } = prepareMocks('mobile');
       renderSkills([]);
 
       mockAllIsIntersecting(true);
-      expect(mock).lastCalledWith([]);
+      expect(pluginsMock).lastCalledWith([]);
+    });
+
+    it('should align to center if there is only 1 slide', () => {
+      const { alignMock } = prepareMocks('tablet');
+      renderSkills([dummySkill]);
+
+      expect(alignMock).lastCalledWith('center');
+    });
+
+    it('should align to start if there is 2 or more slides', () => {
+      const { alignMock } = prepareMocks('tablet');
+      renderSkills([dummySkill, dummySkill]);
+
+      expect(alignMock).lastCalledWith('start');
     });
   });
 

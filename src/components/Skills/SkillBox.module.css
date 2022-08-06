@@ -10,7 +10,7 @@
 
 .name {
     color: white;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: bold;
     margin-left: 25%;
     padding-bottom: 1rem;
@@ -28,19 +28,19 @@
     color: white;
     align-self: left;
     margin: 0.2rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     width: 40%;
 }
 
 .skillBar {
-    height: 1.7rem;
+    height: 1.5rem;
     width: 100%;
     border-radius: 1rem;
     border: 1px solid rgba(199, 199, 199, 0.7);
 }
 
 .skillBarFill {
-    height: 1.7rem;
+    height: 1.5rem;
     width: 0;
     transition: all 500ms ease-out;
     background: rgba(199, 199, 199, 0.7);
@@ -53,13 +53,13 @@
 @media only screen and (max-width: 1200px) {
     .name {
         color: white;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         padding-bottom: 0.5rem;
     }
 
     .skillName {
         color: white;
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         align-self: left;
         padding-left: 0.5rem;
         margin-top: 0.5rem;
@@ -75,11 +75,11 @@
 
     .skillBar {
         margin-top: 0.5rem;
-        height: 1.3rem;
+        height: 1.1rem;
     }
 
     .skillBarFill {
-        height: 1.3rem;
+        height: 1.1rem;
     }
 }
 

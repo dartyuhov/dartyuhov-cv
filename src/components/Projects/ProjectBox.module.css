@@ -8,24 +8,19 @@
     padding: 1rem 1.5rem;
 }
 
-.projectDescription {
-    font-size: 1rem;
-    color: white;
-}
-
 h4 {
     margin: 0;
     color: white;
 }
 
 .role {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: bold;
     color: white;
 }
 
 .roleName {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: white;
 }
 
@@ -36,6 +31,10 @@ h4 {
     align-items: stretch;
     flex-wrap: wrap;
     margin-left: 0.5rem;
+}
+
+.techStackTitle {
+    margin-top: 1rem;
 }
 
 .tech {

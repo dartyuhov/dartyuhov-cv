@@ -142,7 +142,13 @@ const ContactMe: React.FC<{offset: number}> = ({ offset }) => {
             {...form.getInputProps('message')}
           />
           <div className={classes.controls}>
-            <button type="submit" className={classes.submit}>Submit</button>
+            <button
+              type="submit"
+              className={classes.submit}
+              aria-label="Submit"
+            >
+              Submit
+            </button>
           </div>
         </form>
       </FlexCard>

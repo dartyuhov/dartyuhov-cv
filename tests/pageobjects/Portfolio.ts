@@ -1,14 +1,12 @@
 import { Page, BrowserContext } from '@playwright/test';
-import Header from './Header.form';
-import Summary from './Summary.form';
-import SkillsCarousel from './SkillsCarousel.form';
-import { IPage } from './types/types.d';
-import ContactMe from './ContactMe.form';
+import {
+  ContactMe, Footer, Header, MyProjects, SkillsCarousel, Summary,
+} from './forms';
 
-export default class Portfolio implements IPage {
-  readonly context: BrowserContext;
+export default class Portfolio {
+  private readonly context: BrowserContext;
 
-  readonly page: Page;
+  private readonly page: Page;
 
   constructor(page: Page, context: BrowserContext) {
     this.page = page;
@@ -27,8 +25,16 @@ export default class Portfolio implements IPage {
     return new SkillsCarousel(this.page);
   }
 
+  get myProjects() {
+    return new MyProjects(this.page);
+  }
+
   get contactMe() {
     return new ContactMe(this.page);
+  }
+
+  get footer() {
+    return new Footer(this.page, this.context);
   }
 
   async open() {

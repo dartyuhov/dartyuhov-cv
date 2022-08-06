@@ -50,7 +50,7 @@ const Skills: FC<Props> = ({ skills, offset }) => {
   const useStyles = useCallback(createStyles(() => {
     const getSlidePercentage = () => {
       if (screenType === 'widescreen') {
-        return '33.33333333%';
+        return '33.33%';
       }
       if (screenType === 'tablet' || screenType === 'desktop') {
         return '50%';
@@ -60,7 +60,7 @@ const Skills: FC<Props> = ({ skills, offset }) => {
 
     return ({
       slide: {
-        maxHeight: '100%',
+        maxHeight: '80%',
         paddingLeft: '.5rem',
         maxWidth: getSlidePercentage(),
       },
@@ -96,32 +96,30 @@ const Skills: FC<Props> = ({ skills, offset }) => {
       factor={pagesConfig.factor}
       speed={pagesConfig.skills.speed}
     >
-      {/* move ref to FlexCard */}
-      <div ref={ref}>
-        <FlexCard
-          title="Skills"
-          className={classes.mainContainer}
-          contentClassName={classes.content}
+      <FlexCard
+        ref={ref}
+        title="Skills"
+        className={classes.mainContainer}
+        contentClassName={classes.content}
+      >
+        <Carousel
+          loop
+          align={skills.length > 1 ? 'start' : 'center'}
+          aria-label="Skills carousel"
+          nextControlLabel="Next slide (right arrow)"
+          previousControlLabel="Previous slide (left arrow)"
+          controlSize={40}
+          withControls={skills.length > getSlidesOnPageAmount()}
+          slidesToScroll={getSlidesOnPageAmount()}
+          classNames={carouselClasses}
+          withIndicators={skills.length > getSlidesOnPageAmount()}
+          plugins={screenType !== 'mobile' && inView ? [autoplayPlugin.current] : []}
+          onMouseEnter={autoplayPlugin.current.stop}
+          onMouseLeave={autoplayPlugin.current.reset}
         >
-          <Carousel
-            loop
-            align={skills.length > 1 ? 'start' : 'center'}
-            aria-label="Skills carousel"
-            nextControlLabel="Next slide (right arrow)"
-            previousControlLabel="Previous slide (left arrow)"
-            controlSize={40}
-            withControls={skills.length > getSlidesOnPageAmount()}
-            slidesToScroll={getSlidesOnPageAmount()}
-            classNames={carouselClasses}
-            withIndicators={skills.length > getSlidesOnPageAmount()}
-            plugins={screenType !== 'mobile' && inView ? [autoplayPlugin.current] : []}
-            onMouseEnter={autoplayPlugin.current.stop}
-            onMouseLeave={autoplayPlugin.current.reset}
-          >
-            {content}
-          </Carousel>
-        </FlexCard>
-      </div>
+          {content}
+        </Carousel>
+      </FlexCard>
     </ParallaxLayer>
   ), [
     offset, content, getSlidesOnPageAmount, carouselClasses, inView, screenType,

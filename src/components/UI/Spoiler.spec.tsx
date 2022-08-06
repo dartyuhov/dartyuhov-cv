@@ -21,9 +21,21 @@ describe('Spoiler element', () => {
     render(<Spoiler maxHeight={100} onExpandClickDecorator={jest.fn}><div data-testid="test">{text}</div></Spoiler>);
     expect(screen.getByTestId('test')).toBeDefined();
     expect(screen.getByText(text)).toBeInTheDocument();
-    const expandButton = await screen.getByRole('button', { name: 'Show more' });
+    const expandButton = screen.getByRole('button', { name: 'Show more' });
     userEvent.click(expandButton);
     expect(expandButton).toHaveTextContent('Hide');
+  });
+
+  it('should apply overflowY: scroll on expand', () => {
+    render(<Spoiler maxHeight={100} ariaLabel="Spoiler"><div /></Spoiler>);
+
+    const spoiler = screen.getByLabelText('Spoiler');
+    expect(spoiler).toHaveStyle('overflow-y: hidden;');
+
+    const expandButton = screen.getByRole('button', { name: 'Show more' });
+    userEvent.click(expandButton);
+
+    expect(spoiler).toHaveStyle('overflow-y: scroll;');
   });
 
   it('should call onExpandClickDecorator on click', async () => {

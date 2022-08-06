@@ -1,6 +1,6 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "dartyuhov-cv",
+  "version": "0.1.7",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
@@ -11,19 +11,16 @@
     "@mantine/notifications": "^5.0.0",
     "@playwright/test": "^1.24.1",
     "@react-spring/parallax": "^9.5.1",
-    "@reduxjs/toolkit": "^1.8.3",
     "@tabler/icons": "^1.78.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "embla-carousel-react": "^7.0.0-rc05",
     "embla-carousel-autoplay": "^7.0.0",
+    "embla-carousel-react": "^7.0.0-rc05",
     "lodash.groupby": "^4.6.0",
     "react": "^18.2.0",
-    "react-confetti": "^6.1.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.4.0",
-    "react-redux": "^8.0.2",
     "typescript": "^4.7.4",
     "typewriter-effect": "^2.19.0",
     "web-vitals": "^2.1.4"
@@ -38,6 +35,7 @@
     "test:watch": "react-scripts test",
     "test:unit": "react-scripts test --watchAll=false --coverage",
     "test:e2e": "npx playwright test",
+    "test:e2e-update-snapshots": "npx playwright test --update-snapshots",
     "test:e2e-report": "npx playwright show-report"
   },
   "eslintConfig": {
@@ -66,6 +64,7 @@
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
+    "async": "^3.2.4",
     "eslint": "^8.20.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",
