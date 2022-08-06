@@ -27,9 +27,13 @@ describe('useNotification', () => {
       closeButtonProps: {
         'aria-label': 'Hide notification',
       },
-      icon: (<IconCheck color="teal" />),
+      icon: (<IconCheck fillOpacity={0} />),
       disallowClose: false,
     }));
+    // check notification icon's background color
+    expect((showNotificationMock.mock.calls[0][0] as any).styles()).toEqual(
+      { icon: { backgroundColor: '#12b886 !important' } },
+    );
   });
 
   it('should call loading noticiation', () => {
@@ -50,6 +54,10 @@ describe('useNotification', () => {
       icon: undefined,
       disallowClose: true,
     }));
+    // check notification icon's background color
+    expect((showNotificationMock.mock.calls[0][0] as any).styles()).toEqual(
+      { icon: { backgroundColor: 'white !important' } },
+    );
   });
 
   it('should call error noticiation', () => {
@@ -67,9 +75,14 @@ describe('useNotification', () => {
       closeButtonProps: {
         'aria-label': 'Hide notification',
       },
-      icon: <IconX color="red" />,
+      icon: <IconX />,
       disallowClose: false,
     }));
+
+    // check notification icon's background color
+    expect((showNotificationMock.mock.calls[0][0] as any).styles()).toEqual(
+      { icon: { backgroundColor: 'red !important' } },
+    );
   });
 
   it('should accept tsx as message', () => {
