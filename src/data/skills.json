@@ -11,15 +11,6 @@
         }
     },
     {
-        "name": "CI/CD",
-        "config": {
-            "Jenkins": 100,
-            "Github Actions": 60,
-            "Teamcity": 80,
-            "Bitbucket": 70
-        }
-    },
-    {
         "name": "Test Automation Tools",
         "config": {
             "Selenium": 100,
@@ -32,6 +23,15 @@
             "TestNG": 100,
             "Cypress": 50,
             "Webdriverio": 70
+        }
+    },
+    {
+        "name": "CI/CD",
+        "config": {
+            "Jenkins": 100,
+            "Github Actions": 60,
+            "Teamcity": 80,
+            "Bitbucket": 70
         }
     },
     {
