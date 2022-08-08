@@ -2,7 +2,6 @@
 import {
   FC, ReactNode, useState,
 } from 'react';
-
 import { useElementSize } from '@mantine/hooks';
 
 import classes from './Spoiler.module.css';

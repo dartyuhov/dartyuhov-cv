@@ -8,45 +8,40 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build
+  build-and-test:
+    name: Build and Test
     runs-on: ubuntu-latest
-    
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
         node-version: 16.x
-    
     - name: Install NPM packages
       run: npm ci
-    
     - name: Build
       run: npm run build
       env:
-          REACT_APP_EMAIL_JS_PUBLIC_KEY: ${{ secrets.REACT_APP_EMAIL_JS_PUBLIC_KEY }}
-          REACT_APP_EMAIL_JS_SENDER_ID: ${{ secrets.REACT_APP_EMAIL_JS_SENDER_ID }}
-          REACT_APP_EMAIL_JS_TEMPLATE_ID: ${{ secrets.REACT_APP_EMAIL_JS_TEMPLATE_ID }}
-
+        REACT_APP_EMAIL_JS_PUBLIC_KEY: ${{ secrets.REACT_APP_EMAIL_JS_PUBLIC_KEY }}
+        REACT_APP_EMAIL_JS_SENDER_ID: ${{ secrets.REACT_APP_EMAIL_JS_SENDER_ID }}
+        REACT_APP_EMAIL_JS_TEMPLATE_ID: ${{ secrets.REACT_APP_EMAIL_JS_TEMPLATE_ID }}
     - name: Run unit tests
       run: npm run test:unit
-
-    - name: Install Playwright Browsers
+    - name: Install Browsers
       run: npx playwright install --with-deps
-
     - name: Run e2e tests
       run: npm run test:e2e
-
+      env:
+        REACT_APP_EMAIL_JS_PUBLIC_KEY: ${{ secrets.REACT_APP_EMAIL_JS_PUBLIC_KEY }}
+        REACT_APP_EMAIL_JS_SENDER_ID: ${{ secrets.REACT_APP_EMAIL_JS_SENDER_ID }}
+        REACT_APP_EMAIL_JS_TEMPLATE_ID: ${{ secrets.REACT_APP_EMAIL_JS_TEMPLATE_ID }}
     - uses: actions/upload-artifact@v2
       if: always()
       with:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
-
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
       with:
@@ -55,18 +50,16 @@ jobs:
   
   deploy:
     name: Deploy
-    needs: build
+    needs: build-and-test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
     steps:
     - name: Download artifact
       uses: actions/download-artifact@v2
       with:
         name: production-files
         path: ./build
-
-    - name: Deploy to gh-pages
+    - name: Deploy to github pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

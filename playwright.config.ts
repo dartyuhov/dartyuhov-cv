@@ -14,9 +14,9 @@ const desktopViewport = { width: 1920, height: 1080 };
 const config: PlaywrightTestConfig = {
   testDir: './tests/',
   snapshotDir: './tests/__snapshots__',
-  timeout: 25000,
+  timeout: process.env.CI ? 40000 : 25000,
   expect: {
-    timeout: 10000,
+    timeout: process.env.CI ? 20000 : 10000,
     toHaveScreenshot: {
       maxDiffPixelRatio: 0.05,
       animations: 'disabled',
@@ -30,7 +30,7 @@ const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   workers: process.env.CI ? 1 : 4,
   reporter: [['html', { open: 'never' }]],
-
+  retries: process.env.CI ? 1 : 0,
   projects: [
     {
       name: 'chromium',
@@ -74,11 +74,12 @@ const config: PlaywrightTestConfig = {
   ],
 
   use: {
-    actionTimeout: 10000,
+    actionTimeout: process.env.CI ? 20000 : 10000,
+    video: 'on-first-retry',
+    trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     headless: process.env.HEADLESS ? process.env.HEADLESS === 'true' : true,
     baseURL: 'http://localhost:3000/',
-
   },
 
   webServer: {
