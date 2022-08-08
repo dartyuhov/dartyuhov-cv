@@ -36,14 +36,14 @@
     height: 1.5rem;
     width: 100%;
     border-radius: 1rem;
-    border: 1px solid rgba(199, 199, 199, 0.7);
+    border: 1px solid rgb(255, 255, 255);
 }
 
 .skillBarFill {
     height: 1.5rem;
     width: 0;
     transition: all 500ms ease-out;
-    background: rgba(199, 199, 199, 0.7);
+    background: rgb(255, 255, 255);
     border-radius: 1rem;
     text-align: center;
     vertical-align: middle;
