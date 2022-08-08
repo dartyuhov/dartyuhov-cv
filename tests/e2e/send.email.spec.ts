@@ -5,7 +5,7 @@ import test from '../fixtures';
 const userData = require('../../src/data/userData.json');
 
 test.describe('Send email', () => {
-  test.fixme('user should be able to send email', async ({ portfolio, page }) => {
+  test('user should be able to send email', async ({ portfolio, page }) => {
     mockEmailSendSuccess(page);
 
     await portfolio.header.goTo('Contact me');
@@ -23,7 +23,7 @@ test.describe('Send email', () => {
     await expect(notification.description.first()).toHaveText('Your mail has been sent! I will reach you out you as soon as possible!');
   });
 
-  test.fixme('should see error if emailJs reterns error', async ({ portfolio, page }) => {
+  test('should see error if emailJs reterns error', async ({ portfolio, page }) => {
     mockEmailSendReject(page);
 
     await portfolio.header.goTo('Contact me');
