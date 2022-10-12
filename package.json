@@ -1,7 +1,8 @@
 {
   "name": "dartyuhov-cv",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "private": true,
+  "homepage": "https://dartyuhov.github.io/dartyuhov-cv",
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "@mantine/carousel": "^5.0.0",
@@ -27,7 +28,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rimraf ./build && react-scripts build",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js,.ts,.tsx src",
     "pretest": "rimraf ./coverage && rimraf ./playwright-report && rimraf ./test-results",

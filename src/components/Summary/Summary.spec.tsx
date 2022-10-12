@@ -41,5 +41,21 @@ describe('Summary screen', () => {
       const image = screen.queryByRole('img', { name: 'Running some tests...' });
       expect(image).toBeNull();
     });
+
+    it('should adjust position of hello text and avatar if terminal is active', async () => {
+      jest.useFakeTimers();
+      renderSummary();
+
+      const mainContainer = screen.getByTestId('sammary-container');
+      expect(mainContainer).toHaveStyle('width: 100%');
+
+      act(() => {
+        jest.runOnlyPendingTimers();
+      });
+
+      const image = await screen.findByRole('img', { name: 'Running some tests...' });
+      expect(image).toBeInTheDocument();
+      expect(mainContainer).toHaveStyle('width: 70%');
+    });
   });
 });

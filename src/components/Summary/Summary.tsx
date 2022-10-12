@@ -14,12 +14,19 @@ const Summary: FC<{ offset: number}> = ({ offset }) => {
   const [terminalActive, setTerminalActive] = useState(false);
   const { pagesConfig } = usePageConfig();
   const matchesSmallScreen = useMediaQuery('(max-width: 1000px)');
+  const [mainContainerWith, setMainContainerWith] = useState('100%');
 
   useEffect(() => {
     setTimeout(() => {
       setTerminalActive(true);
     }, 8000);
   }, []);
+
+  useEffect(() => {
+    if (terminalActive) {
+      setMainContainerWith('70%');
+    }
+  }, [terminalActive]);
 
   return (
     <div id="summary">
@@ -33,7 +40,13 @@ const Summary: FC<{ offset: number}> = ({ offset }) => {
         </ParallaxLayer>
       )}
       <ParallaxLayer offset={offset + 0.2} speed={pagesConfig.summary.speed}>
-        <div className={classes.mainContainer}>
+        <div
+          className={classes.mainContainer}
+          data-testid="sammary-container"
+          style={{
+            width: mainContainerWith,
+          }}
+        >
           <img src={avatar} alt="avatar" className={classes.photo} />
           <SocialLinks />
           <HelloText />
