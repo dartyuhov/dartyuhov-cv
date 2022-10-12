@@ -34,4 +34,8 @@ test.describe('Navigation', () => {
     await portfolio.header.goTo('Contact me');
     await expect(portfolio.contactMe.locator).toBeVisible();
   });
+  test('user should be able to download cv', async ({ portfolio }) => {
+    const newTab = await portfolio.header.downloadCv();
+    await expect(newTab).toHaveURL(userData.cvLink);
+  });
 });

@@ -15,7 +15,7 @@ type SocialLinksPropsType = {
 };
 
 const SocialLinks: FC<SocialLinksPropsType> = ({ className }) => (
-  <div aria-label="Social links" className={className ? `${className} ${classes.social}` : className}>
+  <div aria-label="Social links" className={className ? `${className} ${classes.social}` : classes.social}>
     <a
       target="_blank"
       aria-label="LinkedIn link"

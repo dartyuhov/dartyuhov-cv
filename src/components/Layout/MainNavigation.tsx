@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import { FC, useState } from 'react';
-
 import { Burger } from '@mantine/core';
 import { useWindowEvent } from '@mantine/hooks';
+
+import CvLink from '../Common/CvLink';
 import LeftPanel from './LeftPanel';
 
 import classes from './MainNavigation.module.css';
@@ -12,14 +13,18 @@ type Props = {
   onSkillsClick: () => void;
   onContactClick: () => void;
   onProjectsClick: () => void;
-}
+};
 const responsiveConfig = { mobileView: 768 };
 
 const MainNavigation: FC<Props> = ({
-  onAboutClick, onSkillsClick, onContactClick, onProjectsClick,
+  onAboutClick,
+  onSkillsClick,
+  onContactClick,
+  onProjectsClick,
 }) => {
   const [leftPanelOpened, setLeftPanelOpened] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useWindowEvent('resize', () => {
     setWindowWidth(window.innerWidth);
     if (windowWidth > responsiveConfig.mobileView) {
@@ -80,6 +85,7 @@ const MainNavigation: FC<Props> = ({
             Contact me
           </button>
         </li>
+        <li><CvLink /></li>
       </ul>
     </nav>
   );
@@ -105,14 +111,9 @@ const MainNavigation: FC<Props> = ({
   }
   return (
     <>
-      <header className={classes['main-header']}>
-        {headerContent}
-      </header>
+      <header className={classes['main-header']}>{headerContent}</header>
       {leftPanelOpened && windowWidth <= responsiveConfig.mobileView && (
-        <LeftPanel
-          opened={leftPanelOpened}
-          onClose={leftPanelCloseHandler}
-        >
+        <LeftPanel opened={leftPanelOpened} onClose={leftPanelCloseHandler}>
           {mainMenu}
         </LeftPanel>
       )}

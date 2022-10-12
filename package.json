@@ -1,5 +1,4 @@
 {
-  "homepage": "https://dartyuhov.github.io/dartyuhov-cv",
   "name": "dartyuhov-cv",
   "version": "0.1.8",
   "private": true,
@@ -10,7 +9,7 @@
     "@mantine/form": "^5.0.0",
     "@mantine/hooks": "^5.0.0",
     "@mantine/notifications": "^5.0.0",
-    "@playwright/test": "^1.24.1",
+    "@playwright/test": "^1.27.1",
     "@react-spring/parallax": "^9.5.1",
     "@tabler/icons": "^1.78.1",
     "@testing-library/jest-dom": "^5.16.4",
@@ -36,6 +35,7 @@
     "test:watch": "react-scripts test",
     "test:unit": "react-scripts test --watchAll=false --coverage",
     "test:e2e": "npx playwright test",
+    "test:e2e-update-snapshots": "npx playwright test --update-snapshots",
     "test:e2e-report": "npx playwright show-report"
   },
   "eslintConfig": {
@@ -57,7 +57,6 @@
     ]
   },
   "devDependencies": {
-    "@svgr/webpack": "^6.3.1",
     "@types/jest": "^27.5.2",
     "@types/lodash.groupby": "^4.6.7",
     "@types/node": "^16.11.45",
@@ -72,12 +71,10 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "nth-check": ">=2.0.1",
     "react-scripts": "5.0.1",
     "rimraf": "^3.0.2"
   },
   "overrides": {
-    "@svgr/webpack": "$@svgr/webpack",
     "@mantine/carousel": {
       "embla-carousel-react": "7.0.0-rc05"
     }
