@@ -67,6 +67,6 @@
     }
 
     .main-nav a {
-        margin-left: 0.4rem;
+        max-width: 6rem;
     }
 }
