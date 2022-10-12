@@ -4,3 +4,13 @@
     border: none;
     padding-top: 1rem;
 }
+
+.downloadCV {
+    margin-top: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.downloadCV a {
+    text-align: cente;
+}

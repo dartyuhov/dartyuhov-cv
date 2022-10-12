@@ -35,7 +35,7 @@ const Summary: FC<{ offset: number}> = ({ offset }) => {
       <ParallaxLayer offset={offset + 0.2} speed={pagesConfig.summary.speed}>
         <div className={classes.mainContainer}>
           <img src={avatar} alt="avatar" className={classes.photo} />
-          <SocialLinks className={classes.social} />
+          <SocialLinks />
           <HelloText />
         </div>
       </ParallaxLayer>

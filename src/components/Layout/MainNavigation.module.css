@@ -27,15 +27,16 @@
     text-decoration: none;
 }
 
-.main-nav button {
+.main-nav button, a {
     color: white;
     background: inherit;
     border: none;
     font-size: 1.1em;
     font-weight: bold;
+    text-decoration: none;
 }
 
-.main-nav button:hover {
+.main-nav button:hover, a:hover {
     color: #777173;
     box-shadow: none;
     border: none;
@@ -61,7 +62,11 @@
         background: inherit;
         border: none;
         margin-bottom: 1rem;
-        font-size: 1.5em;
+        font-size: 1.2rem;
         font-weight: bold;
+    }
+
+    .main-nav a {
+        margin-left: 0.4rem;
     }
 }

@@ -1,0 +1,9 @@
+.downloadCvLink {
+    display: flex;
+    flex-direction: row;
+    min-width: 9rem;
+}
+
+.downloadCvLink svg {
+    margin-left: 0.5rem;
+}

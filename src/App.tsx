@@ -38,7 +38,7 @@ const App = () => {
       {isLoading && (
         <LoadingOverlay
           visible
-          loaderProps={{ size: 'lg', variant: 'bars' }}
+          loaderProps={{ size: 'lg', variant: 'bars', color: 'white' }}
           overlayOpacity={0.6}
           overlayColor="black"
           overlayBlur={2}

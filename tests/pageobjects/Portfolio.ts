@@ -14,7 +14,7 @@ export default class Portfolio {
   }
 
   get header() {
-    return new Header(this.page);
+    return new Header(this.page, this.context);
   }
 
   get summary() {

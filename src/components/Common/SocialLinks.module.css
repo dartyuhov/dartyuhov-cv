@@ -1,9 +1,9 @@
-svg {
+.social svg {
     fill: rgb(146, 145, 145);
     display: inline;
 }
 
-svg:hover {
+.social svg:hover {
     fill: white;
     transform: scale(1.3);
 }

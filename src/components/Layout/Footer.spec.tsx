@@ -13,4 +13,12 @@ describe('Footer', () => {
     const socialLinks = screen.getByLabelText('Social links');
     expect(socialLinks).toBeInTheDocument();
   });
+
+  it('should render Download CV button with link', async () => {
+    render(<Parallax pages={1}><Footer offset={0} /></Parallax>);
+    const downloadLink = await screen.findByRole('link', {
+      name: /download cv/i,
+    });
+    expect(downloadLink).toBeInTheDocument();
+  });
 });

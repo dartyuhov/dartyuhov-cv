@@ -4,10 +4,9 @@
         "config" : {
             "Java" : 90,
             "JavaScript" : 80,
-            "TypeScript" : 80,
-            "Groovy" : 60,
-            "C#" : 50,
-            "Scala" : 30
+            "TypeScript": 90,
+            "Groovy": 50,
+            "C#": 50
         }
     },
     {
@@ -18,18 +17,17 @@
             "Playwright": 100,
             "Selenide": 70,
             "Appium": 80,
-            "Jest": 80,
-            "Junit5": 90,
+            "Jest": 100,
+            "Junit5": 100,
             "TestNG": 100,
-            "Cypress": 50,
-            "Webdriverio": 70
+            "WebdriverIO": 70
         }
     },
     {
         "name": "CI/CD",
         "config": {
             "Jenkins": 100,
-            "Github Actions": 60,
+            "Github Actions": 70,
             "Teamcity": 80,
             "Bitbucket": 70
         }
@@ -40,7 +38,7 @@
             "Node.js": 80,
             "Spring" : 60,
             "React": 70,
-            "Redux": 60
+            "Unity": 50
         }
     },
     {
@@ -48,6 +46,7 @@
         "config": {
             "MySQL" : 90,
             "Postgres" : 80,
+            "Mongo": 50,
             "DB2": 80
         }
     }
