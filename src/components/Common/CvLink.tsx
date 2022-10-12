@@ -25,15 +25,19 @@ const CvLink: FC<CvLinkProps> = ({ className }) => {
       aria-label="Download CV"
       href={userData.cvLink}
       rel="noreferrer"
-      className={className ? `${className} ${classes.downloadCvLink}` : classes.downloadCvLink}
+      className={
+        className
+          ? `${className} ${classes.downloadCvLink}`
+          : classes.downloadCvLink
+      }
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       Download CV
       <DownloadIcon
-        height={24}
+        height={16}
         data-testid="download-icon"
-        width={24}
+        width={16}
         fill={downloadIconFill}
       />
     </a>
