@@ -1,7 +1,11 @@
 import { Parallax } from '@react-spring/parallax';
 import { render, screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
+import { useMediaQuery } from '@mantine/hooks';
 import Summary from './Summary';
+
+jest.mock('@mantine/hooks');
+const useMediaQueryMock = useMediaQuery as jest.MockedObject<typeof useMediaQuery>;
 
 const renderSummary = () => render(<Parallax pages={1}><Summary offset={0} /></Parallax>);
 describe('Summary screen', () => {
@@ -29,7 +33,7 @@ describe('Summary screen', () => {
       expect(image).toBeInTheDocument();
     });
 
-    it('should not render terminal becaouse of timeout', () => {
+    it('should not render terminal because of timeout', () => {
       renderSummary();
       const image = screen.queryByRole('img', { name: 'Running some tests...' });
       expect(image).toBeNull();
@@ -37,7 +41,12 @@ describe('Summary screen', () => {
 
     it('should not render terminal if small screen', () => {
       window.innerWidth = 1000;
+      jest.useFakeTimers();
+      (useMediaQueryMock as any).mockImplementation(() => true);
       renderSummary();
+      act(() => {
+        jest.runOnlyPendingTimers();
+      });
       const image = screen.queryByRole('img', { name: 'Running some tests...' });
       expect(image).toBeNull();
     });
@@ -56,6 +65,18 @@ describe('Summary screen', () => {
       const image = await screen.findByRole('img', { name: 'Running some tests...' });
       expect(image).toBeInTheDocument();
       expect(mainContainer).toHaveStyle('width: 70%');
+    });
+
+    it('should not adjust position of hello text and avatar if small screen', async () => {
+      jest.useFakeTimers();
+      (useMediaQueryMock as any).mockImplementation(() => true);
+      renderSummary();
+
+      act(() => {
+        jest.runOnlyPendingTimers();
+      });
+      const mainContainer = screen.getByTestId('sammary-container');
+      expect(mainContainer).toHaveStyle('width: 100%');
     });
   });
 });

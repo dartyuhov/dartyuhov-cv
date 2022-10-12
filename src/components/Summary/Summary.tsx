@@ -17,16 +17,21 @@ const Summary: FC<{ offset: number}> = ({ offset }) => {
   const [mainContainerWith, setMainContainerWith] = useState('100%');
 
   useEffect(() => {
-    setTimeout(() => {
-      setTerminalActive(true);
-    }, 8000);
-  }, []);
+    if (!matchesSmallScreen) {
+      setTimeout(() => {
+        setTerminalActive(true);
+      }, 8000);
+    }
+  }, [matchesSmallScreen]);
 
   useEffect(() => {
-    if (terminalActive) {
+    if (matchesSmallScreen) {
+      setTerminalActive(false);
+      setMainContainerWith('100%');
+    } else if (terminalActive) {
       setMainContainerWith('70%');
     }
-  }, [terminalActive]);
+  }, [terminalActive, matchesSmallScreen]);
 
   return (
     <div id="summary">
