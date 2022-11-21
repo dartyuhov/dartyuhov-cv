@@ -16,7 +16,18 @@
         "name": "Ant-virus. Web application",
         "role": "Manual QA",
         "techStack": [
-            "VMware", "vSphere", "Microsoft VMM", "Hyper v", "TM Server", "VPN", "RDP", "VNC", "Windows", "MacOS", "Android" ,"iOS"
+            "VMware",
+            "vSphere",
+            "Microsoft VMM",
+            "Hyper v",
+            "TM Server",
+            "VPN",
+            "RDP",
+            "VNC",
+            "Windows",
+            "MacOS",
+            "Android",
+            "iOS"
         ],
         "year": 2016,
         "description": "<p>Web interface that allows users to manage their products: manage licence, manipulate desktop products parameters through web interface and etc.</p><p>Responsibilities: <ul><li>new feature testing</li><li>test reports</li><li>test automation runs analysis</li></p>"
@@ -43,7 +54,12 @@
         "name": "Social network for a community of real estate professionals",
         "role": "Test Automation Engineer",
         "techStack": [
-            "Java", "Selenium", "Cucumber", "Jenkins", "Maven", "Allure"
+            "Java",
+            "Selenium",
+            "Cucumber",
+            "Jenkins",
+            "Maven",
+            "Allure"
         ],
         "year": 2017,
         "description": "<p>Social network for real estate related professionals.</p><p>Responsibilities: <ul><li>CI/CD setup (Jenkins)</li><li>Creating gherkin scenarios</li><li>Reporting and build notification (Allure and emails)</li><li>Test Automation Framework creation</li></ul></p>"
@@ -52,7 +68,11 @@
         "name": "DLP-system for corporate network scanning",
         "role": "Test Automation Engineer | Team Lead",
         "techStack": [
-            "Scala", "TestNG", "Jenkins", "Maven", "Allure"
+            "Scala",
+            "TestNG",
+            "Jenkins",
+            "Maven",
+            "Allure"
         ],
         "year": 2018,
         "description": "<p>System for corporate network scanning to track employees activity during working hours.</p><p>Responsibilities: <ul><li>Team leading</li><li>CI/CD setup (Jenkins)</li><li>Code Review</li><li>Test scripts implementation</li><li>Reporting (Allure)</li></ul></p>"
@@ -78,7 +98,15 @@
         "name": "Test run / analyzing portal",
         "role": "Java back-end developer | DevOps",
         "techStack": [
-            "Java", "Spring", "Hybernate", "JPA", "Postgres", "Maven", "Jenkins", "Docker", "TestNG"
+            "Java",
+            "Spring",
+            "Hybernate",
+            "JPA",
+            "Postgres",
+            "Maven",
+            "Jenkins",
+            "Docker",
+            "TestNG"
         ],
         "year": 2018,
         "description": "<p>Test portal that allows users to test their APIs.</p><p>Responsibilities: <ul><li>Legacy solution refactoring</li><li>Backend logic implementation</li><li>Database restructure (Postgres)</li><li>Dokerezation of application (backend, database + frontend)</li><li>Automation of CI/CD process</li></ul></p>"
@@ -87,7 +115,18 @@
         "name": "Unity-based mobile game",
         "role": "SDET | Team Lead",
         "techStack": [
-            "Unity", "C#", "Java", "Appium", "Jenkins", "Test Strategy", "Groovy", "Junit5", "GCP", "Google Guice", "Rest-Assured"
+            "Unity",
+            "Unity Test Runner",
+            "C#",
+            "Java",
+            "Appium",
+            "Jenkins",
+            "Test Strategy",
+            "Groovy",
+            "Junit5",
+            "GCP",
+            "Google Guice",
+            "Rest-Assured"
         ],
         "year": 2019,
         "description": "<p>Mobile game that aggregates a set of mini-games.</p><p>Responsibilities: <ul><li>Team leading</li><li>Developing of Test automation framework</li><li>CI/CD setup</li><li>Unity-based driver implementation</li></ul></p>"
@@ -96,8 +135,19 @@
         "name": "Finance. Bank transactions",
         "role": "Test Automation Engineer",
         "techStack": [
-            "Playwright", "Jest", "Typescript", "Cucumber",
-            "Cucumber", "Selenide", "TestNG", "Integration test", "Google Guice", "RabbitMQ", "DB2", "TeamCity", "microservices"
+            "Playwright",
+            "Jest",
+            "Typescript",
+            "Cucumber",
+            "Cucumber",
+            "Selenide",
+            "TestNG",
+            "Integration test",
+            "Google Guice",
+            "RabbitMQ",
+            "DB2",
+            "TeamCity",
+            "microservices"
         ],
         "year": 2020,
         "description": "<p>Product that allows banks to handle and perform interstate money transactions.</p><p>Responsibilities: <ul><li>Integration tests support and creation</li><li>UI e2e tests creation</li><li>Lightwight frontend framework set-up</ul></p>"
@@ -106,7 +156,11 @@
         "name": "Darknet monitoring web app",
         "role": "SDET | Test Automation Engineer",
         "techStack": [
-            "Typescript", "Jest", "Playwright", "Lerna", "AWS",
+            "Typescript",
+            "Jest",
+            "Playwright",
+            "Lerna",
+            "AWS",
             "React", "OpenAPI generator", "testing-library", "Test Strategy", "Cucumber", "one-app", "microfrontends", "bitbucket-pipelnes"
         ],
         "year": 2020,
@@ -116,7 +170,13 @@
         "name": "Admin application",
         "role": "SDET | Team Lead",
         "techStack": [
-            "Typescript", "Playwright", "OpenAPI generator", "testing-library", "Cucumber", "react", "one-app",
+            "Typescript",
+            "Playwright",
+            "OpenAPI generator",
+            "testing-library",
+            "Cucumber",
+            "react",
+            "one-app",
             "bitbucket-pipelnes", "microfrontends", "microservices"
         ],
         "year": 2021,
@@ -133,7 +193,20 @@
         "name": "European Union internal product",
         "role": "Test Automation Engineer",
         "techStack": [
-            "Java", "Typescript", "playwright", "microfrontends", "microservices", "Cucumber", "React", "Jenkins", "Camunda", "Serenity", "Spring", "Mockito", "Javascript", "Groovy"
+            "Java",
+            "Typescript",
+            "playwright",
+            "microfrontends",
+            "microservices",
+            "Cucumber",
+            "React",
+            "Jenkins",
+            "Camunda",
+            "Serenity",
+            "Spring",
+            "Mockito",
+            "Javascript",
+            "Groovy"
         ],
         "year": 2022,
         "description": "<p>Product that simplifies and automates internal processes.</p><p>Responsibilities: <ul><li>Analysis of requirements</li><li>E2E Test automation framework support</li><li>Unit/Integration/E2E tests creation</li><li>CI/CD pipeline creation</li></ul></p>"
