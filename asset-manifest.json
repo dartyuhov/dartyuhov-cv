@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dartyuhov-cv/static/css/main.d0e3ad94.css",
-    "main.js": "/dartyuhov-cv/static/js/main.a3f0ab52.js",
+    "main.js": "/dartyuhov-cv/static/js/main.9a868ed0.js",
     "static/js/787.b995565a.chunk.js": "/dartyuhov-cv/static/js/787.b995565a.chunk.js",
     "static/media/runTests.gif": "/dartyuhov-cv/static/media/runTests.3ad8c439a55d041d3cb4.gif",
     "static/media/avatar.jpeg": "/dartyuhov-cv/static/media/avatar.9c6a30844ac5ee6df81d.jpeg",
@@ -11,11 +11,11 @@
     "static/media/download.svg": "/dartyuhov-cv/static/media/download.7aa0a2b7e24b331b6bd83af7d168b373.svg",
     "index.html": "/dartyuhov-cv/index.html",
     "main.d0e3ad94.css.map": "/dartyuhov-cv/static/css/main.d0e3ad94.css.map",
-    "main.a3f0ab52.js.map": "/dartyuhov-cv/static/js/main.a3f0ab52.js.map",
+    "main.9a868ed0.js.map": "/dartyuhov-cv/static/js/main.9a868ed0.js.map",
     "787.b995565a.chunk.js.map": "/dartyuhov-cv/static/js/787.b995565a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d0e3ad94.css",
-    "static/js/main.a3f0ab52.js"
+    "static/js/main.9a868ed0.js"
   ]
 }
