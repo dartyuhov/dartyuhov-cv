@@ -1,7 +1,6 @@
 {
   "name": "dartyuhov-cv",
-  "version": "0.2",
-  "private": true,
+  "version": "0.3",
   "homepage": "https://dartyuhov.github.io/dartyuhov-cv",
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
@@ -100,5 +99,6 @@
         "statements": 90
       }
     }
-  }
+  },
+  "license": "MIT"
 }
