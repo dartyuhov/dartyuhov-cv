@@ -16,7 +16,10 @@ describe('Social links', () => {
     const linkedin = screen.getByLabelText('LinkedIn link');
     const github = screen.getByLabelText('GitHub link');
 
-    expect(linkedin).toHaveAttribute('href', 'https://www.linkedin.com/in/dmitry-artyuhov-75873913b');
+    expect(linkedin).toHaveAttribute(
+      'href',
+      'https://www.linkedin.com/in/dzmitry-artsiukhou-75873913b/',
+    );
     expect(github).toHaveAttribute('href', 'https://github.com/dartyuhov');
     expect(instagram).toHaveAttribute('href', 'https://www.instagram.com/dima_artyukhov');
   });
