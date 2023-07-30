@@ -1,7 +1,7 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
 
-const desktopViewport = { width: 1920, height: 1080 };
+const desktopViewport = { width: 1080, height: 720 };
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -28,9 +28,9 @@ const config: PlaywrightTestConfig = {
   },
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  workers: process.env.CI ? 1 : 4,
+  workers: process.env.CI ? 2 : 4,
   reporter: [['html', { open: 'never' }]],
-  retries: process.env.CI ? 1 : 0,
+  retries: process.env.CI ? 2 : 0,
   projects: [
     {
       name: 'chromium',
@@ -47,29 +47,6 @@ const config: PlaywrightTestConfig = {
         viewport: desktopViewport,
       },
     },
-
-    {
-      name: 'webkit',
-      use: {
-        ...devices['Desktop Safari'],
-        viewport: desktopViewport,
-      },
-    },
-
-    // TODO add mobile tests
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: {
-    //     ...devices['Pixel 5'],
-    //   },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: {
-    //     ...devices['iPhone 12'],
-    //   },
-    // },
 
   ],
 

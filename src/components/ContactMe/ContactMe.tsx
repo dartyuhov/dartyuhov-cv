@@ -67,6 +67,13 @@ const ContactMe: React.FC<{offset: number}> = ({ offset }) => {
 
   useEffect(() => {
     if (isError) {
+      const subject = 'Message from dartyuhov-cv!';
+      const body = 'Hi, I wanted to get in touch with you!';
+
+      // Encode the subject and body to be properly formatted in the email link
+      const encodedSubject = encodeURIComponent(subject);
+      const encodedBody = encodeURIComponent(body);
+      const mailToLink = `mailto:${userData.email}?subject=${encodedSubject}&body=${encodedBody}`;
       showNotification({
         message: (
           <>
@@ -74,7 +81,7 @@ const ContactMe: React.FC<{offset: number}> = ({ offset }) => {
             <br />
             You can contact me directly at
             {' '}
-            <a href={`mailto:${userData.email}`}>{userData.email}</a>
+            <a className={classes.emailLink} href={mailToLink}>{userData.email}</a>
           </>
         ),
         title: 'Error',
@@ -105,7 +112,7 @@ const ContactMe: React.FC<{offset: number}> = ({ offset }) => {
         className={classes.mainContainer}
         contentClassName={classes.content}
       >
-        <form onSubmit={submitHandler}>
+        <form aria-label="Contact me" onSubmit={submitHandler}>
           <TextInput
             required
             label="Your Name:"

@@ -2,10 +2,14 @@
     width: 40%;
     background: rgba(252, 252, 252, 0.3);
     border-radius: 15px;
-    min-height: 27rem;
+    min-height: 22rem;
     border: 1px solid black;
     margin: 2rem;
     padding: 1rem 1.5rem;
+}
+
+p, li { 
+ font-size: 0.93rem;
 }
 
 h4 {
@@ -13,15 +17,32 @@ h4 {
     color: white;
 }
 
-.role {
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
+.projectLink {
+    font-size: 0.7rem;
+    margin: 0;
+    padding: 0;
+    color: rgb(157, 206, 255);
+    text-decoration: none; /* Remove underline from the link */
+    border: none;
+    text-align: right;
+    background: none;
 }
 
-.roleName {
-    font-size: 1rem;
-    color: white;
+.projectLink:hover {
+    text-decoration: underline; /* Underline the link on hover */
+}
+
+.property {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: rgb(228, 226, 226);
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.propertyName {
+    font-size: 0.8rem;
+    color: rgb(190, 190, 190);
 }
 
 .techStack {
@@ -34,6 +55,7 @@ h4 {
 }
 
 .techStackTitle {
+    font-size: 0.8rem;
     margin-top: 1rem;
 }
 
@@ -54,7 +76,7 @@ h4 {
 
 h4 {
     width: 100%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 @media only screen and (max-width: 1350px) {

@@ -7,6 +7,8 @@ export type Skill = {
 
 export type Project = {
     name: string;
+    industry?: string;
+    link?: string;
     role: string;
     techStack: string[];
     year: number;
