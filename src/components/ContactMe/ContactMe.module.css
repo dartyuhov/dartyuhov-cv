@@ -18,6 +18,20 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.emailLink {
+    font-size: 1rem;
+    color: rgb(87, 85, 85);
+    text-decoration: none; /* Remove underline from the link */
+    border: none;
+    text-align: right;
+    background: none;
+}
+
+.emailLink:hover {
+   text-decoration: underline; /* Underline the link on hover */
+}
+
 .submit {
     background: none;
     border: 1px solid white;

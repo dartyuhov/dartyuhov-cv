@@ -8,6 +8,7 @@ import SocialLinks from '../Common/SocialLinks';
 
 import classes from './Summary.module.css';
 import avatar from '../../images/avatar.jpeg';
+import userData from '../../data/userData.json';
 import usePageConfig from '../../hooks/usePageConfig';
 
 const Summary: FC<{ offset: number}> = ({ offset }) => {
@@ -54,6 +55,11 @@ const Summary: FC<{ offset: number}> = ({ offset }) => {
         >
           <img src={avatar} alt="avatar" className={classes.photo} />
           <SocialLinks />
+          <div aria-label="Location" className={classes.location}>
+            {userData.location}
+            {' '}
+            📍
+          </div>
           <HelloText />
         </div>
       </ParallaxLayer>

@@ -4,6 +4,8 @@ import ProjectBox from './ProjectBox';
 
 const dummyProject = {
   name: 'Project 1',
+  link: 'http://example.com',
+  industry: 'Industry',
   description: 'lorem ipsum dolor sit amet lorem ipsum dolor ipsum dolor sit amet lorem ipsum dolor sit amet. lorem ipsum dolor sit amet lorem ipsum dolor ipsum dolor sit amet lorem ipsum dolor sit amet',
   techStack: ['Tech 1', 'Tech 2'],
   year: 2020,
@@ -40,6 +42,17 @@ describe('Project', () => {
     expect(screen.getByText(dummyProject.role)).toBeInTheDocument();
   });
 
+  it('should render project industry', () => {
+    expect(screen.getByText(dummyProject.industry)).toBeInTheDocument();
+  });
+
+  it('should render project link', () => {
+    const link = screen.getByRole('link', { name: 'Link to project website' });
+
+    expect(link).toBeInTheDocument();
+    expect(link).toHaveAttribute('href', dummyProject.link);
+  });
+
   it('should render project tech stack', async () => {
     expect(screen.getByText(dummyProject.techStack[0])).toBeInTheDocument();
     expect(screen.getByText(dummyProject.techStack[1])).toBeInTheDocument();
@@ -72,6 +85,22 @@ describe('Project', () => {
 });
 
 describe('Project', () => {
+  it('should not render link and industry if undefined', async () => {
+    render(
+      <ProjectBox project={{
+        ...dummyProject,
+        industry: undefined,
+        link: undefined,
+      }}
+      />,
+    );
+    const link = screen.queryByRole('link', { name: 'Link to project website' });
+    const industry = screen.queryByLabelText('Project industry');
+
+    expect(link).toBeNull();
+    expect(industry).toBeNull();
+  });
+
   it('should allow to render html in description', async () => {
     render(
       <ProjectBox project={{

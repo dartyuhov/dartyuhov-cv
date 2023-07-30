@@ -12,3 +12,9 @@
     border: 2px solid #fffbfb42;
     border-radius: 50%;
 }
+
+.location {
+    font-size: 0.9rem;
+    color: white;
+    font-weight: bold;
+}

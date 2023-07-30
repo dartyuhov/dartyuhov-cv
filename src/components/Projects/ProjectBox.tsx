@@ -16,11 +16,38 @@ const ProjectBox: FC<{ project: Project }> = ({ project }) => {
 
   return (
     <div className={classes.project}>
-      <h4 aria-label="Project name" className={classes.projectName}>{project.name}</h4>
-      <p className={classes.role}>
+      <h4 aria-label="Project name" className={classes.projectName}>
+        {project.name}
+        {' '}
+        {project.link
+          && (
+          <a
+            className={classes.projectLink}
+            href={project.link}
+            title="Link to project website"
+          >
+            🔗
+          </a>
+          )}
+      </h4>
+
+      {project.industry && (
+        <p
+          className={classes.property}
+          aria-label="Project industry"
+        >
+          Industry:
+          {' '}
+          <span className={classes.propertyName}>{project.industry}</span>
+        </p>
+      )}
+      <p
+        className={classes.property}
+        aria-label="Project role"
+      >
         Role:
         {' '}
-        <span className={classes.roleName}>{project.role}</span>
+        <span className={classes.propertyName}>{project.role}</span>
       </p>
       <Spoiler
         maxHeight={100}

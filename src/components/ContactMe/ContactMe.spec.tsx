@@ -8,6 +8,7 @@ import userEvent from '@testing-library/user-event';
 import ContactMe from './ContactMe';
 import useNotification from '../../hooks/useNotification';
 import userData from '../../data/userData.json';
+import classes from './ContactMe.module.css';
 
 jest.mock('../../hooks/useNotification');
 jest.mock('@emailjs/browser');
@@ -87,6 +88,13 @@ describe('ContactMe', () => {
           type: 'loading',
         },
       );
+      const subject = 'Message from dartyuhov-cv!';
+      const body = 'Hi, I wanted to get in touch with you!';
+
+      // Encode the subject and body to be properly formatted in the email link
+      const encodedSubject = encodeURIComponent(subject);
+      const encodedBody = encodeURIComponent(body);
+      const mailToLink = `mailto:${userData.email}?subject=${encodedSubject}&body=${encodedBody}`;
       expect(mockNotification).toBeCalledWith(expect.objectContaining({
         message: (
           <>
@@ -94,7 +102,7 @@ describe('ContactMe', () => {
             <br />
             You can contact me directly at
             {' '}
-            <a href={`mailto:${userData.email}`}>{userData.email}</a>
+            <a className={classes.emailLink} href={mailToLink}>{userData.email}</a>
           </>
         ),
         title: 'Error',

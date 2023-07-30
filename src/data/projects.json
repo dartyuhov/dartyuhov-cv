@@ -1,6 +1,8 @@
 [
     {
-        "name": "Аirlines: Web and mobile applications",
+        "name": "Aeroflot",
+        "link": "https://www.aeroflot.ru/",
+        "industry": "Aviation",
         "role": "Manual QA",
         "techStack": [
             "WMWare",
@@ -13,45 +15,54 @@
         "description": "<p>Online service to book, manage and search flights. Including mobile and web applications.</p><p>Resonsobilities: <ul><li>manual regression tests</li><li>acceptance tests</li><li>mockups testing</li></ul></p>"
     },
     {
-        "name": "Ant-virus. Web application",
+        "name": "Kaspersky Lab.",
+        "link": "https://www.kaspersky.co.uk/about",
+        "industry": "Cybersecurity",
         "role": "Manual QA",
         "techStack": [
             "VMware",
             "vSphere",
             "Microsoft VMM",
-            "Hyper v",
+            "Hyper-V",
             "TM Server",
-            "VPN",
-            "RDP",
-            "VNC",
-            "Windows",
-            "MacOS",
-            "Android",
-            "iOS"
+            "Web Testing"
         ],
         "year": 2016,
         "description": "<p>Web interface that allows users to manage their products: manage licence, manipulate desktop products parameters through web interface and etc.</p><p>Responsibilities: <ul><li>new feature testing</li><li>test reports</li><li>test automation runs analysis</li></p>"
     },
     {
-        "name": "Web-store for Animals (medicaments)",
+        "name": "Store for Animals | Web Application",
+        "industry": "E-Commerce",
         "role": "Test Automation Engineer",
         "techStack": [
-            "Java", "Selenium", "TestNG", "Jenkins", "Maven"
+            "Java", 
+            "Selenium", 
+            "TestNG", 
+            "Jenkins", 
+            "Maven"
         ],
         "year": 2017,
         "description": "<p>Store application that allows user to search, buy, compare, filter products for amimals.</p><p>Responsibilities: <ul><li>Creating of new automation scripts</li><li>support of existing tests</li><li>analysis of automation runs.</li></ul></p>"
     },
     {
-        "name": "Social network for military",
+        "name": "Social Network (Military) | Web Application",
+        "industry": "Social Media",
         "role": "Test Automation Engineer",
         "techStack": [
-            "Java", "Selenium", "TestNG", "Jenkins", "Jenkins", "TeamCity", "MySQL", "Maven"
+            "Java", 
+            "Selenium", 
+            "TestNG", 
+            "Jenkins", 
+            "TeamCity", 
+            "MySQL", 
+            "Maven"
         ],
         "year": 2017,
         "description": "<p>Social network for military. Find mates from army company, contact them and communicate.</p><p>Responsibilities: <ul><li>Creating of new automation scripts</li><li>support of existing tests</li><li>analysis of automation runs.</li></ul></p>"
     },
     {
-        "name": "Social network for a community of real estate professionals",
+        "name": "Social Network (Real Estate) | Web Application",
+        "industry": "Social Media",
         "role": "Test Automation Engineer",
         "techStack": [
             "Java",
@@ -65,10 +76,12 @@
         "description": "<p>Social network for real estate related professionals.</p><p>Responsibilities: <ul><li>CI/CD setup (Jenkins)</li><li>Creating gherkin scenarios</li><li>Reporting and build notification (Allure and emails)</li><li>Test Automation Framework creation</li></ul></p>"
     },
     {
-        "name": "DLP-system for corporate network scanning",
+        "name": "DLP-system | Web Application",
+        "industry": "Cybersecurity",
         "role": "Test Automation Engineer | Team Lead",
         "techStack": [
             "Scala",
+            "Java",
             "TestNG",
             "Jenkins",
             "Maven",
@@ -78,25 +91,27 @@
         "description": "<p>System for corporate network scanning to track employees activity during working hours.</p><p>Responsibilities: <ul><li>Team leading</li><li>CI/CD setup (Jenkins)</li><li>Code Review</li><li>Test scripts implementation</li><li>Reporting (Allure)</li></ul></p>"
     },
     {
-        "name": "Business learning portal for startups",
+        "name": "Sberbank | Web Application",
+        "link": "https://www.sberbank.com/",
+        "industry": "Banking | Finance",
         "role": "Test Automation Engineer",
         "techStack": [
             "Java",
             "Selenium",
             "Cucumber",
+            "Rest-Assured",
             "Jenkins",
             "YouTrack",
-            "kubernetes",
-            "Docker",
-            "Microservices",
-            "Rest-Assured"
+            "Kubernetes",
+            "Docker"
         ],
         "year": 2018,
         "description": "<p>Portal for selling the courses for users who have a startup or for those who want become a startuper.</p><p>Responsibilities: <ul><li>Test automation scripts creation for UI and API</li><li>Integration tests for microcervices</li></ul></p>"
     },
     {
-        "name": "Test run / analyzing portal",
-        "role": "Java back-end developer | DevOps",
+        "name": "Test portal | Web Application",
+        "industry": "Telecommunications",
+        "role": "Java Developer / DevOps",
         "techStack": [
             "Java",
             "Spring",
@@ -104,111 +119,114 @@
             "JPA",
             "Postgres",
             "Maven",
+            "TestNG",
             "Jenkins",
-            "Docker",
-            "TestNG"
+            "Docker"
         ],
         "year": 2018,
-        "description": "<p>Test portal that allows users to test their APIs.</p><p>Responsibilities: <ul><li>Legacy solution refactoring</li><li>Backend logic implementation</li><li>Database restructure (Postgres)</li><li>Dokerezation of application (backend, database + frontend)</li><li>Automation of CI/CD process</li></ul></p>"
+        "description": "<p>Test portal to test APIs implementations for compliance with the specification.</p><p>Responsibilities: <ul><li>Legacy solution refactoring</li><li>Backend logic implementation</li><li>Database restructure (Postgres)</li><li>Dokerezation of application (backend, database + frontend)</li><li>Automation of CI/CD process</li></ul></p>"
     },
     {
-        "name": "Unity-based mobile game",
+        "name": "Aristocrat",
+        "link": "https://www.aristocrat.com/",
+        "industry": "Gaming",
         "role": "SDET | Team Lead",
         "techStack": [
-            "Unity",
-            "Unity Test Runner",
             "C#",
             "Java",
+            "Unity",
+            "Unity Test Runner",
             "Appium",
             "Jenkins",
-            "Test Strategy",
             "Groovy",
-            "Junit5",
+            "Junit 5",
+            "Rest-Assured",
             "GCP",
-            "Google Guice",
-            "Rest-Assured"
+            "Google Guice"
         ],
         "year": 2019,
         "description": "<p>Mobile game that aggregates a set of mini-games.</p><p>Responsibilities: <ul><li>Team leading</li><li>Developing of Test automation framework</li><li>CI/CD setup</li><li>Unity-based driver implementation</li></ul></p>"
     },
     {
-        "name": "Finance. Bank transactions",
+        "name": "Visa",
+        "link": "https://usa.visa.com/about-visa.html",
+        "industry": "Banking | Finance",
         "role": "Test Automation Engineer",
         "techStack": [
+            "Typescript",
+            "Java",
             "Playwright",
             "Jest",
-            "Typescript",
-            "Cucumber",
             "Cucumber",
             "Selenide",
             "TestNG",
-            "Integration test",
             "Google Guice",
             "RabbitMQ",
             "DB2",
-            "TeamCity",
-            "microservices"
+            "TeamCity"
         ],
         "year": 2020,
         "description": "<p>Product that allows banks to handle and perform interstate money transactions.</p><p>Responsibilities: <ul><li>Integration tests support and creation</li><li>UI e2e tests creation</li><li>Lightwight frontend framework set-up</ul></p>"
     },
     {
-        "name": "Darknet monitoring web app",
-        "role": "SDET | Test Automation Engineer",
-        "techStack": [
-            "Typescript",
-            "Jest",
-            "Playwright",
-            "Lerna",
-            "AWS",
-            "React", "OpenAPI generator", "testing-library", "Test Strategy", "Cucumber", "one-app", "microfrontends", "bitbucket-pipelnes"
-        ],
-        "year": 2020,
-        "description": "<p>Darknet monitoring app that allows users to check whether their data was stolen or compromised.</p><p>Responsibilities: <ul><li>Test Strategy</li><li>OpenAPI generator based API test framework creation</li><li>UI test framework creation</li><li>Unit Testing</li><li>CI/CD test/deploy pipeline creation</li></ul></p>"
-    },
-    {
-        "name": "Admin application",
-        "role": "SDET | Team Lead",
-        "techStack": [
-            "Typescript",
-            "Playwright",
-            "OpenAPI generator",
-            "testing-library",
-            "Cucumber",
-            "react",
-            "one-app",
-            "bitbucket-pipelnes", "microfrontends", "microservices"
-        ],
-        "year": 2021,
-        "description": "<p>Portal that allows to search, communicate and obtain available customers.</p><p>Responsibilities: <ul><li>Team Leading</li><li>Analysis of requirements</li><li>Test Strategy</li><li>E2E Test automation framework creation</li><li>Unit Testing</li><li>CI/CD test/deploy pipeline creation</li></ul></p>"
-    },
-    {
-        "name": "Candidates interviewing",
+        "name": "Tech Interviewing",
         "role": "Interviewer",
         "techStack": [],
         "year": 2021,
         "description": "I was involved into interviewing process to test knowledge of the candidates that wanted to join the company."
     },
     {
-        "name": "European Union internal product",
-        "role": "Test Automation Engineer",
+        "name": "CPP Group UK",
+        "link": "https://uk.cppgroup.com",
+        "industry": "Cybersecurity",
+        "role": "SDET | Lead Test Automation Engineer",
+        "techStack": [
+            "Test Strategy", 
+            "Typescript",
+            "Testing Library", 
+            "Playwright",
+            "Cucumber",
+            "Jest",
+            "React", 
+            "OpenAPI Generator", 
+            "Lerna",
+            "AWS",
+            "Bitbucket Pipelnes"
+        ],
+        "year": 2021,
+        "description": "<p>Darknet monitoring app that allows users to check whether their data was stolen or compromised.</p><p>Responsibilities: <ul><li>Test Strategy</li><li>OpenAPI generator based API test framework creation</li><li>UI test framework creation</li><li>Unit Testing</li><li>CI/CD test/deploy pipeline creation</li></ul></p>"
+    },
+    {
+        "name": "Eupropean Patent Office",
+        "link": "https://www.epo.org/",
+        "industry": "Intellectual Property | Patent Services",
+        "role": "Senior Test Automation Engineer",
         "techStack": [
             "Java",
             "Typescript",
-            "playwright",
-            "microfrontends",
-            "microservices",
+            "Playwright",
+            "Serenity",
             "Cucumber",
             "React",
-            "Jenkins",
-            "Camunda",
-            "Serenity",
-            "Spring",
             "Mockito",
-            "Javascript",
-            "Groovy"
+            "Jenkins",
+            "GitHub Actions",
+            "Camunda",
+            "Spring"
         ],
         "year": 2022,
         "description": "<p>Product that simplifies and automates internal processes.</p><p>Responsibilities: <ul><li>Analysis of requirements</li><li>E2E Test automation framework support</li><li>Unit/Integration/E2E tests creation</li><li>CI/CD pipeline creation</li></ul></p>"
+    },
+    {
+        "name": "Activision Blizzard King",
+        "link": "https://www.king.com/",
+        "industry": "Gaming",
+        "role": "Senior Test Automation Engineer - New Games",
+        "techStack": [
+            "C#",
+            "Unity"
+        ],
+        "year": 2023,
+        "description": "<p>Mobile Gaming</p>"
     }
 ]

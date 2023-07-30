@@ -5,7 +5,7 @@ export default class ContactMe implements IForm {
   readonly locator: Locator;
 
   constructor(private readonly page: Page) {
-    this.locator = page.locator('#contact-me');
+    this.locator = page.getByRole('form', { name: 'Contact me' });
   }
 
   async fill(data: {
@@ -14,10 +14,10 @@ export default class ContactMe implements IForm {
       message: string;
       subject: string;
   }) {
-    await this.locator.locator('role=textbox[name="Your Name:"]').type(data.name);
-    await this.locator.locator('role=textbox[name="Your Email:"]').type(data.email);
-    await this.locator.locator('role=textbox[name="Subject:"]').type(data.subject);
-    await this.locator.locator('role=textbox[name="Message:"]').type(data.message);
-    await this.locator.locator('role=button[name="Submit"]').click();
+    await this.locator.getByRole('textbox', { name: 'Your Name:' }).type(data.name);
+    await this.locator.getByRole('textbox', { name: 'Your Email:' }).type(data.email);
+    await this.locator.getByRole('textbox', { name: 'Subject:' }).type(data.subject);
+    await this.locator.getByRole('textbox', { name: 'Message:' }).type(data.message);
+    await this.locator.getByLabel('Submit').click();
   }
 }

@@ -2,6 +2,7 @@ import { Parallax } from '@react-spring/parallax';
 import { render, screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import { useMediaQuery } from '@mantine/hooks';
+import userData from '../../data/userData.json';
 import Summary from './Summary';
 
 jest.mock('@mantine/hooks');
@@ -14,6 +15,14 @@ describe('Summary screen', () => {
 
     const avatar = screen.getByAltText('avatar');
     expect(avatar).toBeInTheDocument();
+  });
+
+  it('should show location', () => {
+    renderSummary();
+
+    const textElement = screen.getByLabelText('Location');
+    expect(textElement).toBeInTheDocument();
+    expect(textElement).toHaveTextContent(userData.location);
   });
 
   describe('Terminal image', () => {
