@@ -1,6 +1,6 @@
 {
   "name": "dartyuhov-cv",
-  "version": "0.4",
+  "version": "0.5",
   "homepage": "https://dartyuhov.github.io/dartyuhov-cv",
   "dependencies": {
     "@emailjs/browser": "^3.6.2",

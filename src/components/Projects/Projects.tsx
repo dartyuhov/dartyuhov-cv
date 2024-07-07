@@ -62,7 +62,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsPropsType>(({ projects, offs
               </div>
             </Timeline.Item>
           ))}
-          <Timeline.Item title={+years[years.length - 1] + 1} />
+          <Timeline.Item title={+years[years.length - 1] + 2} />
         </Timeline>
       </FlexCard>
     </ParallaxLayer>
