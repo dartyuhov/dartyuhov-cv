@@ -110,6 +110,7 @@ describe('Projects', () => {
     renderProject([dummyProject]);
 
     expect(screen.getAllByText('202', { exact: false })).toHaveLength(2);
-    expect(screen.getByText('2023')).toBeInTheDocument();
+    const nextYear = new Date().getFullYear() + 1;
+    expect(screen.getByText(nextYear)).toBeInTheDocument();
   });
 });
