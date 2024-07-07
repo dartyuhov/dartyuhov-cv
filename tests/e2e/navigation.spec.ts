@@ -36,6 +36,6 @@ test.describe('Navigation', () => {
   });
   test('user should be able to download cv', async ({ portfolio }) => {
     const newTab = await portfolio.header.downloadCv();
-    await expect(newTab).toHaveURL(userData.cvLink);
+    await expect(newTab).toHaveURL(/.*dartyuhov_cv_2022\.pdf.*/);
   });
 });

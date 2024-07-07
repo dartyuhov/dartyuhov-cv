@@ -26,6 +26,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsPropsType>(({ projects, offs
 
   const grouppedByYear = groupBy(projects, 'year');
   const years = Object.keys(grouppedByYear);
+  const nextYear = new Date().getFullYear() + 1;
   return (
     <ParallaxLayer
       id="projects"
@@ -62,7 +63,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsPropsType>(({ projects, offs
               </div>
             </Timeline.Item>
           ))}
-          <Timeline.Item title={+years[years.length - 1] + 1} />
+          <Timeline.Item title={nextYear} />
         </Timeline>
       </FlexCard>
     </ParallaxLayer>

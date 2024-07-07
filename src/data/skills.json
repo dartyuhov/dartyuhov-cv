@@ -3,10 +3,10 @@
         "name": "Programming Languages",
         "config" : {
             "Java" : 90,
+            "C#": 80,
             "JavaScript" : 80,
             "TypeScript": 90,
-            "Groovy": 50,
-            "C#": 50
+            "Python": 70
         }
     },
     {
@@ -15,12 +15,11 @@
             "Selenium": 100,
             "Cucumber": 100,
             "Playwright": 100,
+            "Cypress": 90,
             "Selenide": 70,
             "Appium": 80,
             "Jest": 100,
-            "Junit5": 100,
-            "TestNG": 100,
-            "WebdriverIO": 70
+            "WebdriverIO": 90
         }
     },
     {
@@ -38,7 +37,7 @@
             "Node.js": 80,
             "Spring" : 60,
             "React": 70,
-            "Unity": 50
+            "Unity": 70
         }
     },
     {

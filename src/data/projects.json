@@ -155,7 +155,7 @@
         "techStack": [
             "Typescript",
             "Java",
-            "Playwright",
+            "Cypress",
             "Jest",
             "Cucumber",
             "Selenide",
@@ -184,7 +184,7 @@
             "Test Strategy", 
             "Typescript",
             "Testing Library", 
-            "Playwright",
+            "Cypress",
             "Cucumber",
             "Jest",
             "React", 
@@ -218,13 +218,19 @@
         "description": "<p>Product that simplifies and automates internal processes.</p><p>Responsibilities: <ul><li>Analysis of requirements</li><li>E2E Test automation framework support</li><li>Unit/Integration/E2E tests creation</li><li>CI/CD pipeline creation</li></ul></p>"
     },
     {
-        "name": "Activision Blizzard King",
-        "link": "https://www.king.com/",
+        "name": "Activision Blizzard",
+        "link": "https://www.blizzard.com/en-gb/",
         "industry": "Gaming",
         "role": "Senior Test Automation Engineer - New Games",
         "techStack": [
             "C#",
-            "Unity"
+            "Python",
+            "Java",
+            "Unity",
+            "Jenkins",
+            "Device Farm",
+            "Unity Test Runner",
+            "Appium"
         ],
         "year": 2023,
         "description": "<p>Mobile Gaming</p>"
